@@ -47,11 +47,6 @@ namespace DoAnWinDows
                 }
             }
         }
-
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         private void AutoRenewSavingsAccounts()
         {
             List<SavingAccount> savingsAccounts = savingaccountDao.GetSavingsAccounts();
@@ -102,6 +97,27 @@ namespace DoAnWinDows
             else if (savingAccount.Interestrate == 4.5)
                 return 360;
             return 0;
+        }
+
+        private void txtUserName_Enter(object sender, EventArgs e)
+        {
+            if (txtUserName.Text == "UserName")
+            {
+                txtUserName.Text = "";
+            }
+        }
+
+        private void txtPassWord_Enter(object sender, EventArgs e)
+        {
+            if (txtPassWord.Text == "PassWord")
+            {
+                txtPassWord.Text = "";
+            }
+        }
+
+        private void cboDecentralization_MouseEnter(object sender, EventArgs e)
+        {
+            cboDecentralization.Select(0, 0);
         }
     }
 }
