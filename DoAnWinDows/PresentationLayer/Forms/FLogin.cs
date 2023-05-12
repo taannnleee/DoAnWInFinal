@@ -34,27 +34,12 @@ namespace DoAnWinDows
                     MessageBox.Show("Mat khau hoac tai khoan sai");
                 }
             }
-            else if (cboDecentralization.SelectedIndex == 1)
+            else
             {
                 if (loginDao.CheckEmployeeAccount(employeeaccount))
                 {
                     FEmployee emp = new FEmployee();
                     emp.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Mat khau hoac tai khoan sai");
-                }
-            }
-            else
-            {
-                if (loginDao.CheckCustomerAccount(account))
-                {
-                    CustomerAccountDAO DAO = new CustomerAccountDAO();
-                    Customer cus = new Customer();
-                    DAO.TakeData(cus, account);
-                    FCustomer customer = new FCustomer(cus, account);
-                    customer.Show();
                 }
                 else
                 {
@@ -117,11 +102,6 @@ namespace DoAnWinDows
             else if (savingAccount.Interestrate == 4.5)
                 return 360;
             return 0;
-        }
-
-        private void FLogin_Load(object sender, EventArgs e)
-        {
-            AutoRenewSavingsAccounts();
         }
     }
 }

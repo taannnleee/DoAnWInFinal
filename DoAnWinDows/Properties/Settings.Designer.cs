@@ -25,8 +25,8 @@ namespace DoAnWinDows.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\DoAnWindows\\DoAnWinDows\\DB" +
-            "Bank.mdf;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Tan\\Downloads\\DoAnWI" +
+            "nFinal\\DoAnWinDows\\DBBank.mdf;Integrated Security=True")]
         public string ConnStr {
             get {
                 return ((string)(this["ConnStr"]));
