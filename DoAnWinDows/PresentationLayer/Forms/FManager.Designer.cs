@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            accountToolStripMenuItem = new ToolStripMenuItem();
-            administratorAccountManagementToolStripMenuItem = new ToolStripMenuItem();
             managerToolStripMenuItem = new ToolStripMenuItem();
             accountManagerToolStripMenuItem = new ToolStripMenuItem();
             employeeManagerToolStripMenuItem = new ToolStripMenuItem();
@@ -42,67 +40,50 @@
             // 
             menuStrip1.BackColor = SystemColors.GradientInactiveCaption;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { accountToolStripMenuItem, managerToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { managerToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(7, 3, 0, 3);
-            menuStrip1.Size = new Size(914, 30);
+            menuStrip1.Size = new Size(800, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
-            // 
-            // accountToolStripMenuItem
-            // 
-            accountToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { administratorAccountManagementToolStripMenuItem });
-            accountToolStripMenuItem.Name = "accountToolStripMenuItem";
-            accountToolStripMenuItem.Size = new Size(168, 24);
-            accountToolStripMenuItem.Text = "AdministratorAccount";
-            // 
-            // administratorAccountManagementToolStripMenuItem
-            // 
-            administratorAccountManagementToolStripMenuItem.Name = "administratorAccountManagementToolStripMenuItem";
-            administratorAccountManagementToolStripMenuItem.Size = new Size(234, 26);
-            administratorAccountManagementToolStripMenuItem.Text = "AccountManagement";
-            administratorAccountManagementToolStripMenuItem.Click += administratorAccountManagementToolStripMenuItem_Click;
             // 
             // managerToolStripMenuItem
             // 
             managerToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { accountManagerToolStripMenuItem, employeeManagerToolStripMenuItem });
             managerToolStripMenuItem.Name = "managerToolStripMenuItem";
-            managerToolStripMenuItem.Size = new Size(82, 24);
+            managerToolStripMenuItem.Size = new Size(66, 20);
             managerToolStripMenuItem.Text = "Manager";
             // 
             // accountManagerToolStripMenuItem
             // 
             accountManagerToolStripMenuItem.Name = "accountManagerToolStripMenuItem";
-            accountManagerToolStripMenuItem.Size = new Size(221, 26);
+            accountManagerToolStripMenuItem.Size = new Size(180, 22);
             accountManagerToolStripMenuItem.Text = "Customer Account";
             accountManagerToolStripMenuItem.Click += customerAccountToolStripMenuItem_Click;
             // 
             // employeeManagerToolStripMenuItem
             // 
             employeeManagerToolStripMenuItem.Name = "employeeManagerToolStripMenuItem";
-            employeeManagerToolStripMenuItem.Size = new Size(221, 26);
+            employeeManagerToolStripMenuItem.Size = new Size(180, 22);
             employeeManagerToolStripMenuItem.Text = "Employee Manager";
             employeeManagerToolStripMenuItem.Click += employeeManagerToolStripMenuItem_Click;
             // 
             // panelContainer
             // 
-            panelContainer.Location = new Point(0, 36);
-            panelContainer.Margin = new Padding(3, 4, 3, 4);
+            panelContainer.Location = new Point(0, 27);
             panelContainer.Name = "panelContainer";
-            panelContainer.Size = new Size(914, 560);
+            panelContainer.Size = new Size(800, 420);
             panelContainer.TabIndex = 1;
             // 
             // FManager
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(panelContainer);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FManager";
             Text = "Manager";
             menuStrip1.ResumeLayout(false);
@@ -118,7 +99,5 @@
         private ToolStripMenuItem accountManagerToolStripMenuItem;
         private Panel panelContainer;
         private ToolStripMenuItem employeeManagerToolStripMenuItem;
-        private ToolStripMenuItem accountToolStripMenuItem;
-        private ToolStripMenuItem administratorAccountManagementToolStripMenuItem;
     }
 }

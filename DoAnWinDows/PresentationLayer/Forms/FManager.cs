@@ -37,42 +37,5 @@ namespace DoAnWinDows
             UCEmployeeManager employee = new UCEmployeeManager();
             AddUserControl(employee);
         }
-
-        private void transactionsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UCTransactions trans = new UCTransactions();
-            AddUserControl(trans);
-        }
-
-        private void rechargeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UCRecharge recharge = new UCRecharge();
-            AddUserControl(recharge);
-        }
-
-        private void withdrawToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UCWithdraw withdraw = new UCWithdraw();
-            AddUserControl(withdraw);
-        }
-
-        private void bankSavingsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UCBankSavings banksavings = new UCBankSavings();
-            AddUserControl(banksavings);
-        }
-
-        private void administratorAccountManagementToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UCAdministratorAccount adminaccount = new UCAdministratorAccount();
-            AddUserControl(adminaccount);
-        }
-
-
-        private void creditCardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UCCreateCreditCard creditCard = new UCCreateCreditCard();
-            AddUserControl(creditCard);
-        }
     }
 }
