@@ -37,62 +37,39 @@
             button4 = new Button();
             lblMenu = new Label();
             homeContainer = new Panel();
-            panel7 = new Panel();
-            btnTypeLoan = new Button();
-            panel1 = new Panel();
-            btnCreditCard = new Button();
-            panel5 = new Panel();
-            btnWithDraw = new Button();
-            loanContainer = new Panel();
-            btnRecharge = new Button();
-            panel12 = new Panel();
-            btnTypeOfLoan = new Button();
             panel11 = new Panel();
-            button1 = new Button();
+            panel13 = new Panel();
+            btnTypeLoan = new Button();
+            panel10 = new Panel();
+            btnCreditCard = new Button();
+            panel9 = new Panel();
+            btnRecharge = new Button();
+            panel7 = new Panel();
+            panel8 = new Panel();
+            btnTransactions = new Button();
+            panel5 = new Panel();
+            btnBankSavings = new Button();
             panel4 = new Panel();
             btnHome = new Button();
-            panel8 = new Panel();
-            btnBankSavings = new Button();
-            panel9 = new Panel();
             panel3 = new Panel();
-            panel10 = new Panel();
-            btnTransactions = new Button();
+            panel1 = new Panel();
+            btnWithDraw = new Button();
+            btnSetting = new Button();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             Hometimer = new System.Windows.Forms.Timer(components);
             panelEmployee = new Panel();
-            panelLoan = new Panel();
-            menuStrip1 = new MenuStrip();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripMenuItem2 = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripMenuItem();
-            toolStripMenuItem4 = new ToolStripMenuItem();
-            toolStripMenuItem5 = new ToolStripMenuItem();
-            toolStripMenuItem6 = new ToolStripMenuItem();
-            toolStripMenuItem7 = new ToolStripMenuItem();
-            toolStripMenuItem8 = new ToolStripMenuItem();
-            panelCreditCard = new Panel();
-            menuStrip2 = new MenuStrip();
-            createCreditCardToolStripMenuItem = new ToolStripMenuItem();
-            toolStripMenuItem9 = new ToolStripMenuItem();
-            toolStripMenuItem10 = new ToolStripMenuItem();
             sidebar.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)menuButton).BeginInit();
             panel6.SuspendLayout();
             homeContainer.SuspendLayout();
+            panel13.SuspendLayout();
+            panel10.SuspendLayout();
+            panel9.SuspendLayout();
             panel7.SuspendLayout();
-            panel1.SuspendLayout();
             panel5.SuspendLayout();
-            loanContainer.SuspendLayout();
-            panel12.SuspendLayout();
-            panel11.SuspendLayout();
             panel4.SuspendLayout();
-            panel8.SuspendLayout();
             panel3.SuspendLayout();
-            panelLoan.SuspendLayout();
-            menuStrip1.SuspendLayout();
-            panelCreditCard.SuspendLayout();
-            menuStrip2.SuspendLayout();
             SuspendLayout();
             // 
             // sidebar
@@ -100,6 +77,7 @@
             sidebar.BackColor = Color.FromArgb(64, 64, 64);
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(homeContainer);
+            sidebar.Controls.Add(btnSetting);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.MaximumSize = new Size(205, 661);
@@ -155,36 +133,46 @@
             // 
             lblMenu.AutoSize = true;
             lblMenu.BackColor = Color.FromArgb(64, 64, 64);
-            lblMenu.ForeColor = Color.White;
-            lblMenu.Location = new Point(62, 28);
+            lblMenu.BorderStyle = BorderStyle.Fixed3D;
+            lblMenu.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMenu.ForeColor = Color.Cyan;
+            lblMenu.Location = new Point(60, 6);
             lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(38, 15);
+            lblMenu.Size = new Size(104, 47);
             lblMenu.TabIndex = 1;
             lblMenu.Text = "Menu";
             // 
             // homeContainer
             // 
+            homeContainer.Controls.Add(panel11);
+            homeContainer.Controls.Add(panel13);
+            homeContainer.Controls.Add(panel10);
+            homeContainer.Controls.Add(panel9);
             homeContainer.Controls.Add(panel7);
-            homeContainer.Controls.Add(panel1);
             homeContainer.Controls.Add(panel5);
-            homeContainer.Controls.Add(loanContainer);
             homeContainer.Controls.Add(panel4);
-            homeContainer.Controls.Add(panel8);
             homeContainer.Controls.Add(panel3);
             homeContainer.Location = new Point(3, 70);
-            homeContainer.MaximumSize = new Size(200, 500);
+            homeContainer.MaximumSize = new Size(200, 370);
             homeContainer.MinimumSize = new Size(200, 52);
             homeContainer.Name = "homeContainer";
-            homeContainer.Size = new Size(200, 451);
+            homeContainer.Size = new Size(200, 370);
             homeContainer.TabIndex = 6;
             // 
-            // panel7
+            // panel11
             // 
-            panel7.Controls.Add(btnTypeLoan);
-            panel7.Location = new Point(0, 299);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(200, 41);
-            panel7.TabIndex = 11;
+            panel11.Location = new Point(3, 373);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(197, 49);
+            panel11.TabIndex = 10;
+            // 
+            // panel13
+            // 
+            panel13.Controls.Add(btnTypeLoan);
+            panel13.Location = new Point(20, 319);
+            panel13.Name = "panel13";
+            panel13.Size = new Size(183, 49);
+            panel13.TabIndex = 9;
             // 
             // btnTypeLoan
             // 
@@ -198,21 +186,22 @@
             btnTypeLoan.ForeColor = Color.White;
             btnTypeLoan.Image = (Image)resources.GetObject("btnTypeLoan.Image");
             btnTypeLoan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTypeLoan.Location = new Point(5, 0);
+            btnTypeLoan.Location = new Point(-24, -1);
             btnTypeLoan.Name = "btnTypeLoan";
             btnTypeLoan.Padding = new Padding(30, 0, 0, 0);
             btnTypeLoan.Size = new Size(203, 49);
             btnTypeLoan.TabIndex = 10;
             btnTypeLoan.Text = "        Type of Loan";
             btnTypeLoan.UseVisualStyleBackColor = false;
+            btnTypeLoan.Click += btnTypeLoan_Click;
             // 
-            // panel1
+            // panel10
             // 
-            panel1.Controls.Add(btnCreditCard);
-            panel1.Location = new Point(3, 251);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(200, 42);
-            panel1.TabIndex = 2;
+            panel10.Controls.Add(btnCreditCard);
+            panel10.Location = new Point(20, 264);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(183, 49);
+            panel10.TabIndex = 8;
             // 
             // btnCreditCard
             // 
@@ -226,7 +215,7 @@
             btnCreditCard.ForeColor = Color.White;
             btnCreditCard.Image = (Image)resources.GetObject("btnCreditCard.Image");
             btnCreditCard.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCreditCard.Location = new Point(-1, 0);
+            btnCreditCard.Location = new Point(-26, 2);
             btnCreditCard.Name = "btnCreditCard";
             btnCreditCard.Padding = new Padding(30, 0, 0, 0);
             btnCreditCard.Size = new Size(206, 49);
@@ -234,48 +223,14 @@
             btnCreditCard.Text = "        CreditCard";
             btnCreditCard.UseVisualStyleBackColor = false;
             btnCreditCard.Click += btnCreditCard_Click;
-            btnCreditCard.Leave += btnCreditCard_Leave;
             // 
-            // panel5
+            // panel9
             // 
-            panel5.Controls.Add(btnWithDraw);
-            panel5.Location = new Point(9, 99);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(191, 43);
-            panel5.TabIndex = 7;
-            // 
-            // btnWithDraw
-            // 
-            btnWithDraw.BackColor = Color.FromArgb(64, 64, 64);
-            btnWithDraw.BackgroundImageLayout = ImageLayout.None;
-            btnWithDraw.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
-            btnWithDraw.FlatAppearance.BorderSize = 5000;
-            btnWithDraw.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
-            btnWithDraw.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            btnWithDraw.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnWithDraw.ForeColor = Color.White;
-            btnWithDraw.Image = (Image)resources.GetObject("btnWithDraw.Image");
-            btnWithDraw.ImageAlign = ContentAlignment.MiddleLeft;
-            btnWithDraw.Location = new Point(0, 0);
-            btnWithDraw.Name = "btnWithDraw";
-            btnWithDraw.Padding = new Padding(30, 0, 0, 0);
-            btnWithDraw.Size = new Size(206, 42);
-            btnWithDraw.TabIndex = 7;
-            btnWithDraw.Text = "        WithDraw";
-            btnWithDraw.UseVisualStyleBackColor = false;
-            btnWithDraw.Click += btnWithDraw_Click;
-            // 
-            // loanContainer
-            // 
-            loanContainer.Controls.Add(btnRecharge);
-            loanContainer.Controls.Add(panel12);
-            loanContainer.Controls.Add(panel11);
-            loanContainer.Location = new Point(5, 194);
-            loanContainer.MaximumSize = new Size(200, 193);
-            loanContainer.MinimumSize = new Size(200, 53);
-            loanContainer.Name = "loanContainer";
-            loanContainer.Size = new Size(200, 53);
-            loanContainer.TabIndex = 10;
+            panel9.Controls.Add(btnRecharge);
+            panel9.Location = new Point(20, 212);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(183, 49);
+            panel9.TabIndex = 7;
             // 
             // btnRecharge
             // 
@@ -289,7 +244,7 @@
             btnRecharge.ForeColor = Color.White;
             btnRecharge.Image = (Image)resources.GetObject("btnRecharge.Image");
             btnRecharge.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRecharge.Location = new Point(1, 4);
+            btnRecharge.Location = new Point(-25, 0);
             btnRecharge.Name = "btnRecharge";
             btnRecharge.Padding = new Padding(30, 0, 0, 0);
             btnRecharge.Size = new Size(206, 49);
@@ -298,61 +253,71 @@
             btnRecharge.UseVisualStyleBackColor = false;
             btnRecharge.Click += btnRecharge_Click;
             // 
-            // panel12
+            // panel7
             // 
-            panel12.Controls.Add(btnTypeOfLoan);
-            panel12.Location = new Point(24, 105);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(198, 41);
-            panel12.TabIndex = 10;
+            panel7.Controls.Add(panel8);
+            panel7.Controls.Add(btnTransactions);
+            panel7.Location = new Point(20, 159);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(183, 49);
+            panel7.TabIndex = 6;
             // 
-            // btnTypeOfLoan
+            // panel8
             // 
-            btnTypeOfLoan.BackColor = Color.FromArgb(64, 64, 64);
-            btnTypeOfLoan.BackgroundImageLayout = ImageLayout.None;
-            btnTypeOfLoan.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
-            btnTypeOfLoan.FlatAppearance.BorderSize = 5000;
-            btnTypeOfLoan.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
-            btnTypeOfLoan.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            btnTypeOfLoan.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTypeOfLoan.ForeColor = Color.White;
-            btnTypeOfLoan.Image = (Image)resources.GetObject("btnTypeOfLoan.Image");
-            btnTypeOfLoan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTypeOfLoan.Location = new Point(0, -8);
-            btnTypeOfLoan.Name = "btnTypeOfLoan";
-            btnTypeOfLoan.Padding = new Padding(30, 0, 0, 0);
-            btnTypeOfLoan.Size = new Size(206, 49);
-            btnTypeOfLoan.TabIndex = 8;
-            btnTypeOfLoan.Text = "        Type of Loan";
-            btnTypeOfLoan.UseVisualStyleBackColor = false;
+            panel8.Location = new Point(0, 50);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(183, 49);
+            panel8.TabIndex = 7;
             // 
-            // panel11
+            // btnTransactions
             // 
-            panel11.Controls.Add(button1);
-            panel11.Location = new Point(9, 58);
-            panel11.Name = "panel11";
-            panel11.Size = new Size(198, 41);
-            panel11.TabIndex = 9;
+            btnTransactions.BackColor = Color.FromArgb(64, 64, 64);
+            btnTransactions.BackgroundImageLayout = ImageLayout.None;
+            btnTransactions.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btnTransactions.FlatAppearance.BorderSize = 5000;
+            btnTransactions.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
+            btnTransactions.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnTransactions.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTransactions.ForeColor = Color.White;
+            btnTransactions.Image = (Image)resources.GetObject("btnTransactions.Image");
+            btnTransactions.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTransactions.Location = new Point(-26, -2);
+            btnTransactions.Name = "btnTransactions";
+            btnTransactions.Padding = new Padding(30, 0, 0, 0);
+            btnTransactions.Size = new Size(206, 49);
+            btnTransactions.TabIndex = 5;
+            btnTransactions.Text = "        Transactions";
+            btnTransactions.UseVisualStyleBackColor = false;
+            btnTransactions.Click += btnTransactions_Click;
             // 
-            // button1
+            // panel5
             // 
-            button1.BackColor = Color.FromArgb(64, 64, 64);
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
-            button1.FlatAppearance.BorderSize = 5000;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            button1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.ImageAlign = ContentAlignment.MiddleLeft;
-            button1.Location = new Point(15, -8);
-            button1.Name = "button1";
-            button1.Padding = new Padding(30, 0, 0, 0);
-            button1.Size = new Size(206, 49);
-            button1.TabIndex = 9;
-            button1.Text = "        Type of Loan";
-            button1.UseVisualStyleBackColor = false;
+            panel5.Controls.Add(btnBankSavings);
+            panel5.Location = new Point(19, 108);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(183, 49);
+            panel5.TabIndex = 5;
+            // 
+            // btnBankSavings
+            // 
+            btnBankSavings.BackColor = Color.FromArgb(64, 64, 64);
+            btnBankSavings.BackgroundImageLayout = ImageLayout.None;
+            btnBankSavings.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btnBankSavings.FlatAppearance.BorderSize = 5000;
+            btnBankSavings.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
+            btnBankSavings.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnBankSavings.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBankSavings.ForeColor = Color.White;
+            btnBankSavings.Image = (Image)resources.GetObject("btnBankSavings.Image");
+            btnBankSavings.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBankSavings.Location = new Point(-25, -1);
+            btnBankSavings.Name = "btnBankSavings";
+            btnBankSavings.Padding = new Padding(30, 0, 0, 0);
+            btnBankSavings.Size = new Size(206, 49);
+            btnBankSavings.TabIndex = 8;
+            btnBankSavings.Text = "        BankSavings";
+            btnBankSavings.UseVisualStyleBackColor = false;
+            btnBankSavings.Click += btnBankSavings_Click;
             // 
             // panel4
             // 
@@ -383,79 +348,62 @@
             btnHome.UseVisualStyleBackColor = false;
             btnHome.Click += btnHome_Click;
             // 
-            // panel8
-            // 
-            panel8.Controls.Add(btnBankSavings);
-            panel8.Controls.Add(panel9);
-            panel8.Location = new Point(5, 147);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(199, 40);
-            panel8.TabIndex = 7;
-            // 
-            // btnBankSavings
-            // 
-            btnBankSavings.BackColor = Color.FromArgb(64, 64, 64);
-            btnBankSavings.BackgroundImageLayout = ImageLayout.None;
-            btnBankSavings.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
-            btnBankSavings.FlatAppearance.BorderSize = 5000;
-            btnBankSavings.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
-            btnBankSavings.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            btnBankSavings.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBankSavings.ForeColor = Color.White;
-            btnBankSavings.Image = (Image)resources.GetObject("btnBankSavings.Image");
-            btnBankSavings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBankSavings.Location = new Point(0, -12);
-            btnBankSavings.Name = "btnBankSavings";
-            btnBankSavings.Padding = new Padding(30, 0, 0, 0);
-            btnBankSavings.Size = new Size(206, 49);
-            btnBankSavings.TabIndex = 8;
-            btnBankSavings.Text = "        BankSavings";
-            btnBankSavings.UseVisualStyleBackColor = false;
-            btnBankSavings.Click += btnBankSavings_Click;
-            // 
-            // panel9
-            // 
-            panel9.Location = new Point(0, 44);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(194, 56);
-            panel9.TabIndex = 8;
-            // 
             // panel3
             // 
-            panel3.Controls.Add(panel10);
-            panel3.Controls.Add(btnTransactions);
-            panel3.Location = new Point(2, 57);
+            panel3.Controls.Add(panel1);
+            panel3.Controls.Add(btnWithDraw);
+            panel3.Location = new Point(19, 57);
             panel3.Name = "panel3";
-            panel3.Size = new Size(200, 42);
+            panel3.Size = new Size(183, 49);
             panel3.TabIndex = 4;
             // 
-            // panel10
+            // panel1
             // 
-            panel10.Location = new Point(3, 39);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(197, 42);
-            panel10.TabIndex = 9;
+            panel1.Location = new Point(1, 47);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(183, 49);
+            panel1.TabIndex = 5;
             // 
-            // btnTransactions
+            // btnWithDraw
             // 
-            btnTransactions.BackColor = Color.FromArgb(64, 64, 64);
-            btnTransactions.BackgroundImageLayout = ImageLayout.None;
-            btnTransactions.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
-            btnTransactions.FlatAppearance.BorderSize = 5000;
-            btnTransactions.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
-            btnTransactions.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            btnTransactions.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTransactions.ForeColor = Color.White;
-            btnTransactions.Image = (Image)resources.GetObject("btnTransactions.Image");
-            btnTransactions.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTransactions.Location = new Point(3, -7);
-            btnTransactions.Name = "btnTransactions";
-            btnTransactions.Padding = new Padding(30, 0, 0, 0);
-            btnTransactions.Size = new Size(206, 49);
-            btnTransactions.TabIndex = 5;
-            btnTransactions.Text = "        Transactions";
-            btnTransactions.UseVisualStyleBackColor = false;
-            btnTransactions.Click += btnTransactions_Click;
+            btnWithDraw.BackColor = Color.FromArgb(64, 64, 64);
+            btnWithDraw.BackgroundImageLayout = ImageLayout.None;
+            btnWithDraw.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btnWithDraw.FlatAppearance.BorderSize = 5000;
+            btnWithDraw.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
+            btnWithDraw.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnWithDraw.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnWithDraw.ForeColor = Color.White;
+            btnWithDraw.Image = (Image)resources.GetObject("btnWithDraw.Image");
+            btnWithDraw.ImageAlign = ContentAlignment.MiddleLeft;
+            btnWithDraw.Location = new Point(-23, 4);
+            btnWithDraw.Name = "btnWithDraw";
+            btnWithDraw.Padding = new Padding(30, 0, 0, 0);
+            btnWithDraw.Size = new Size(206, 42);
+            btnWithDraw.TabIndex = 7;
+            btnWithDraw.Text = "        WithDraw";
+            btnWithDraw.UseVisualStyleBackColor = false;
+            btnWithDraw.Click += btnWithDraw_Click;
+            // 
+            // btnSetting
+            // 
+            btnSetting.BackColor = Color.FromArgb(64, 64, 64);
+            btnSetting.BackgroundImageLayout = ImageLayout.None;
+            btnSetting.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btnSetting.FlatAppearance.BorderSize = 5000;
+            btnSetting.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
+            btnSetting.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnSetting.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSetting.ForeColor = Color.White;
+            btnSetting.Image = (Image)resources.GetObject("btnSetting.Image");
+            btnSetting.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSetting.Location = new Point(3, 446);
+            btnSetting.Name = "btnSetting";
+            btnSetting.Padding = new Padding(30, 0, 0, 0);
+            btnSetting.Size = new Size(202, 49);
+            btnSetting.TabIndex = 4;
+            btnSetting.Text = "        Setting";
+            btnSetting.UseVisualStyleBackColor = false;
             // 
             // sidebarTimer
             // 
@@ -469,117 +417,10 @@
             // 
             // panelEmployee
             // 
-            panelEmployee.Location = new Point(214, 41);
+            panelEmployee.Location = new Point(209, 3);
             panelEmployee.Name = "panelEmployee";
-            panelEmployee.Size = new Size(1071, 517);
+            panelEmployee.Size = new Size(1072, 517);
             panelEmployee.TabIndex = 2;
-            // 
-            // panelLoan
-            // 
-            panelLoan.Controls.Add(menuStrip1);
-            panelLoan.Location = new Point(214, 6);
-            panelLoan.Name = "panelLoan";
-            panelLoan.Size = new Size(1071, 29);
-            panelLoan.TabIndex = 3;
-            // 
-            // menuStrip1
-            // 
-            menuStrip1.BackColor = SystemColors.GradientInactiveCaption;
-            menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem5 });
-            menuStrip1.Location = new Point(0, 0);
-            menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1071, 24);
-            menuStrip1.TabIndex = 1;
-            menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem1
-            // 
-            toolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, toolStripMenuItem3, toolStripMenuItem4 });
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(68, 20);
-            toolStripMenuItem1.Text = "Unsecure";
-            // 
-            // toolStripMenuItem2
-            // 
-            toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(208, 22);
-            toolStripMenuItem2.Text = "Loan";
-            // 
-            // toolStripMenuItem3
-            // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(208, 22);
-            toolStripMenuItem3.Text = "List of Loan Account";
-            // 
-            // toolStripMenuItem4
-            // 
-            toolStripMenuItem4.Name = "toolStripMenuItem4";
-            toolStripMenuItem4.Size = new Size(208, 22);
-            toolStripMenuItem4.Text = "Blacklist of Loan Account";
-            // 
-            // toolStripMenuItem5
-            // 
-            toolStripMenuItem5.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem6, toolStripMenuItem7, toolStripMenuItem8 });
-            toolStripMenuItem5.Name = "toolStripMenuItem5";
-            toolStripMenuItem5.Size = new Size(71, 20);
-            toolStripMenuItem5.Text = "Mortgage";
-            // 
-            // toolStripMenuItem6
-            // 
-            toolStripMenuItem6.Name = "toolStripMenuItem6";
-            toolStripMenuItem6.Size = new Size(208, 22);
-            toolStripMenuItem6.Text = "Loan";
-            // 
-            // toolStripMenuItem7
-            // 
-            toolStripMenuItem7.Name = "toolStripMenuItem7";
-            toolStripMenuItem7.Size = new Size(208, 22);
-            toolStripMenuItem7.Text = "List of Loan Account";
-            // 
-            // toolStripMenuItem8
-            // 
-            toolStripMenuItem8.Name = "toolStripMenuItem8";
-            toolStripMenuItem8.Size = new Size(208, 22);
-            toolStripMenuItem8.Text = "Blacklist of Loan Account";
-            // 
-            // panelCreditCard
-            // 
-            panelCreditCard.Controls.Add(menuStrip2);
-            panelCreditCard.Location = new Point(211, 6);
-            panelCreditCard.Name = "panelCreditCard";
-            panelCreditCard.Size = new Size(331, 25);
-            panelCreditCard.TabIndex = 0;
-            panelCreditCard.Visible = false;
-            // 
-            // menuStrip2
-            // 
-            menuStrip2.BackColor = SystemColors.GradientInactiveCaption;
-            menuStrip2.ImageScalingSize = new Size(20, 20);
-            menuStrip2.Items.AddRange(new ToolStripItem[] { createCreditCardToolStripMenuItem, toolStripMenuItem9, toolStripMenuItem10 });
-            menuStrip2.Location = new Point(0, 0);
-            menuStrip2.Name = "menuStrip2";
-            menuStrip2.Size = new Size(331, 24);
-            menuStrip2.TabIndex = 1;
-            menuStrip2.Text = "menuStrip2";
-            // 
-            // createCreditCardToolStripMenuItem
-            // 
-            createCreditCardToolStripMenuItem.Name = "createCreditCardToolStripMenuItem";
-            createCreditCardToolStripMenuItem.Size = new Size(110, 20);
-            createCreditCardToolStripMenuItem.Text = "CreateCreditCard";
-            // 
-            // toolStripMenuItem9
-            // 
-            toolStripMenuItem9.Name = "toolStripMenuItem9";
-            toolStripMenuItem9.Size = new Size(83, 20);
-            toolStripMenuItem9.Text = "PayByCredit";
-            // 
-            // toolStripMenuItem10
-            // 
-            toolStripMenuItem10.Name = "toolStripMenuItem10";
-            toolStripMenuItem10.Size = new Size(100, 20);
-            toolStripMenuItem10.Text = "CreditRecharge";
             // 
             // FEmployee
             // 
@@ -587,9 +428,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
             ClientSize = new Size(1284, 749);
-            Controls.Add(panelLoan);
             Controls.Add(panelEmployee);
-            Controls.Add(panelCreditCard);
             Controls.Add(sidebar);
             Name = "FEmployee";
             StartPosition = FormStartPosition.CenterScreen;
@@ -600,30 +439,19 @@
             ((System.ComponentModel.ISupportInitialize)menuButton).EndInit();
             panel6.ResumeLayout(false);
             homeContainer.ResumeLayout(false);
+            panel13.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel9.ResumeLayout(false);
             panel7.ResumeLayout(false);
-            panel1.ResumeLayout(false);
             panel5.ResumeLayout(false);
-            loanContainer.ResumeLayout(false);
-            panel12.ResumeLayout(false);
-            panel11.ResumeLayout(false);
             panel4.ResumeLayout(false);
-            panel8.ResumeLayout(false);
             panel3.ResumeLayout(false);
-            panelLoan.ResumeLayout(false);
-            panelLoan.PerformLayout();
-            menuStrip1.ResumeLayout(false);
-            menuStrip1.PerformLayout();
-            panelCreditCard.ResumeLayout(false);
-            panelCreditCard.PerformLayout();
-            menuStrip2.ResumeLayout(false);
-            menuStrip2.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
         private FlowLayoutPanel sidebar;
-        private Panel panel1;
         private PictureBox menuButton;
         private Label lblMenu;
         private System.Windows.Forms.Timer sidebarTimer;
@@ -636,36 +464,20 @@
         private Button btnCreditCard;
         private System.Windows.Forms.Timer Hometimer;
         private Panel homeContainer;
-        private Button btnTypeOfLoan;
-        private Panel panel8;
         private Button btnBankSavings;
-        private Panel panel9;
         private Button btnWithDraw;
-        private Panel panel10;
         private Button btnRecharge;
         private Button btnTransactions;
-        private Panel panel5;
-        private Panel panel11;
         private Panel panelEmployee;
         private Button btnTypeLoan;
-        private Panel loanContainer;
-        private Panel panel12;
-        private Button button1;
+        private Panel panel13;
+        private Panel panel10;
+        private Panel panel9;
         private Panel panel7;
-        private Panel panelLoan;
-        private MenuStrip menuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem toolStripMenuItem2;
-        private ToolStripMenuItem toolStripMenuItem3;
-        private ToolStripMenuItem toolStripMenuItem4;
-        private ToolStripMenuItem toolStripMenuItem5;
-        private ToolStripMenuItem toolStripMenuItem6;
-        private ToolStripMenuItem toolStripMenuItem7;
-        private ToolStripMenuItem toolStripMenuItem8;
-        private Panel panelCreditCard;
-        private MenuStrip menuStrip2;
-        private ToolStripMenuItem createCreditCardToolStripMenuItem;
-        private ToolStripMenuItem toolStripMenuItem9;
-        private ToolStripMenuItem toolStripMenuItem10;
+        private Panel panel8;
+        private Panel panel5;
+        private Panel panel1;
+        private Button btnSetting;
+        private Panel panel11;
     }
 }
