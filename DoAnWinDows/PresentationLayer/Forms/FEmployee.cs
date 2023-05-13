@@ -83,12 +83,8 @@ namespace DoAnWinDows.PresentationLayer.Forms
 
         private void btnCreditCard_Click(object sender, EventArgs e)
         {
-            //menuStrip1.Visible = true;
-        }
-
-        private void btnCreditCard_Leave(object sender, EventArgs e)
-        {
-            //menuStrip1.Visible = false;
+            UCMenuCreditCard menuCrdi = new UCMenuCreditCard();
+            AddUserControl(menuCrdi);
         }
 
         private void btnTransactions_Click(object sender, EventArgs e)
@@ -114,6 +110,12 @@ namespace DoAnWinDows.PresentationLayer.Forms
             UCBankSavings banksavings = new UCBankSavings();
             banksavings.Dock = DockStyle.Fill;
             AddUserControl(banksavings);
+        }
+
+        private void btnTypeLoan_Click(object sender, EventArgs e)
+        {
+            UCMenuLoan menuLoan = new UCMenuLoan();
+            AddUserControl(menuLoan);
         }
     }
 }
