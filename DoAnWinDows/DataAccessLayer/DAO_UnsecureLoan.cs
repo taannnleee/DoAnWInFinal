@@ -41,7 +41,7 @@ namespace DoAnWinDows.DataAccessLayer
         public static DataTable Show_Unsecure_BlackList()
         {
             DateTime date_time = DateTime.Now;
-            string format_datetime = date_time.ToString("dd/MM/yyyy");
+            string format_datetime = date_time.ToString("MM/dd/yyyy");
             return db.DanhSach(string.Format("SELECT * FROM UnsecureLoan WHERE EndLoan < '{0}'", format_datetime));
         }
 
