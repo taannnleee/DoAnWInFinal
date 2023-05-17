@@ -39,7 +39,7 @@ namespace DoAnWinDows.DataAccessLayer
         public static DataTable Show_Mortgage_BlackList()
         {
             DateTime current = DateTime.Now;
-            string format_datetime_current = current.ToString("dd/MM/yyyy");
+            string format_datetime_current = current.ToString("MM/dd/yyyy");
             return db.DanhSach(string.Format("SELECT * FROM MortgageLoan WHERE EndLoan < '{0}'", format_datetime_current));
         }
 
