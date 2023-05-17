@@ -23,7 +23,7 @@ namespace DoAnWinDows.DataAccessLayer
 
         public bool Them(CreditCard credit)
         {
-            string sqlStr = string.Format("Insert into CreditCard(ExpirationDate,CreditLimit,MoneySpent,DateCreated,AccountNumber,CVVCode,CreditCardStatus)values('{0}','{1}','{2}','{3}','{4}','{5}','{6}')", credit.Expirationdate, credit.Creditlimit, credit.Moneyspent, credit.Datecreated, credit.Accountnumber, credit.Cvvcode, credit.CreditCardStatus);
+            string sqlStr = string.Format("Insert into CreditCard(ExpirationDate,CreditLimit,MoneySpent,DateCreated,AccountNumber,CVVCode,CreditCardStatus,OverdueMonths)values('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}')", credit.Expirationdate, credit.Creditlimit, credit.Moneyspent, credit.Datecreated, credit.Accountnumber, credit.Cvvcode, credit.CreditCardStatus,credit.OverdueMonths);
             return dbconnect.ThucThi(sqlStr);
         }
 
@@ -65,11 +65,9 @@ namespace DoAnWinDows.DataAccessLayer
         {
             SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnStr);
             conn.Open();
-            DateTime today = DateTime.Now;
             List<CreditCard> lcreditcard = new List<CreditCard>();
-            String sqlQuery = String.Format("SELECT * FROM CreditCard WHERE DATEDIFF(day, ExpirationDate, @Today) > 30");
+            String sqlQuery = String.Format("SELECT * FROM CreditCard");
             SqlCommand cmd = new SqlCommand(sqlQuery, conn);
-            cmd.Parameters.AddWithValue("@Today", today);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
@@ -88,6 +86,11 @@ namespace DoAnWinDows.DataAccessLayer
             string sqlreditdetails = string.Format("UPDATE CreditCard SET CreditCardStatus = '{0}' WHERE CVVCode='{1}'", status, cvvcode);
             dbconnect.ThucThi(sqlreditdetails);
         }
+        public void UpdateOverdueMonths(string cvvcode, string monthofdebt)
+        {
+            string sqlreditdetails = string.Format("UPDATE CreditCard SET OverdueMonths = '{0}' WHERE CVVCode='{1}'", monthofdebt, cvvcode);
+            dbconnect.ThucThi(sqlreditdetails);
+        }
 
         public CreditCard GetData(string cvvcode)
         {
@@ -101,6 +104,7 @@ namespace DoAnWinDows.DataAccessLayer
                 credit.Accountnumber = Convert.ToInt32(reader["AccountNumber"]);
                 credit.Cvvcode = reader["CVVCode"].ToString();
                 credit.CreditCardStatus = reader["CreditCardStatus"].ToString();
+                credit.OverdueMonths = reader["OverdueMonths"].ToString();
             }
             reader.Close();
             return credit;
@@ -118,6 +122,12 @@ namespace DoAnWinDows.DataAccessLayer
             }
             reader.Close();
             return cusacc;
+        }
+
+        public void backupStatus(string cvvcode, string status,string debtmonth)
+        {
+            string sqlStr = string.Format("UPDATE CreditCard SET CreditCardStatus = '{0}',OverdueMonths = '{1}' where CVVCode='{2}'",status,debtmonth,cvvcode );
+            dbconnect.ThucThi(sqlStr);
         }
     }
 }
