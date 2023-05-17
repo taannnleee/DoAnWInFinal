@@ -69,12 +69,12 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
 
         public void LoadDanhSach()
         {
-            gvCreditCard.DataSource = reditcardDAO.DanhSachQuanLy();
+            this.gvCreditCard.DataSource = reditcardDAO.DanhSachQuanLy();
         }
 
         private void UCCreditCard_Load(object sender, EventArgs e)
         {
-            this.gvCreditCard.DataSource = reditcardDAO.DanhSachQuanLy();
+            LoadDanhSach();
         }
 
         public void getData(CreditCard credit)
