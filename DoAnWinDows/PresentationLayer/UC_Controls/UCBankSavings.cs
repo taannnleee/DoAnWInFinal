@@ -61,7 +61,7 @@ namespace DoAnWinDows
             {
                 SavingAccount_Select.Balance = (int.Parse(gvQuanLy.SelectedRows[0].Cells["Balance"].Value.ToString()) + int.Parse(SavingAccount_Select.Balance.ToString()) * SavingAccount_Select.Interestrate / 100).ToString();
                 savingaccountDao.TatToan(SavingAccount_Select);
-                MessageBox.Show("Ban da tat toan thanh cong! Ban nhan duoc(goc va lai): "+SavingAccount_Select.Balance.ToString(), "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ban da tat toan thanh cong! Ban nhan duoc(goc va lai): " + SavingAccount_Select.Balance.ToString(), "Thanh cong", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {

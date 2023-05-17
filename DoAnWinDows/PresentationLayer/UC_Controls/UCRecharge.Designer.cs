@@ -52,7 +52,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(297, 16);
+            label3.Location = new Point(468, 0);
             label3.Name = "label3";
             label3.Size = new Size(192, 45);
             label3.TabIndex = 28;
@@ -68,7 +68,7 @@
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.Location = new Point(25, 64);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(739, 223);
+            groupBox1.Size = new Size(1095, 223);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
             groupBox1.Text = "Customer 's Information";
@@ -77,7 +77,7 @@
             // 
             rtxtInformation.Location = new Point(310, 15);
             rtxtInformation.Name = "rtxtInformation";
-            rtxtInformation.Size = new Size(423, 205);
+            rtxtInformation.Size = new Size(779, 205);
             rtxtInformation.TabIndex = 33;
             rtxtInformation.Text = "";
             // 
@@ -123,7 +123,7 @@
             groupBox2.Controls.Add(label2);
             groupBox2.Location = new Point(25, 293);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(739, 248);
+            groupBox2.Size = new Size(1095, 358);
             groupBox2.TabIndex = 33;
             groupBox2.TabStop = false;
             groupBox2.Text = "Withdraw Information";
@@ -131,7 +131,7 @@
             // btnPrintBill
             // 
             btnPrintBill.BackColor = SystemColors.GradientInactiveCaption;
-            btnPrintBill.Location = new Point(467, 203);
+            btnPrintBill.Location = new Point(645, 296);
             btnPrintBill.Name = "btnPrintBill";
             btnPrintBill.Size = new Size(94, 29);
             btnPrintBill.TabIndex = 14;
@@ -143,7 +143,7 @@
             // 
             rtxtInvoice.Location = new Point(310, 13);
             rtxtInvoice.Name = "rtxtInvoice";
-            rtxtInvoice.Size = new Size(423, 184);
+            rtxtInvoice.Size = new Size(779, 249);
             rtxtInvoice.TabIndex = 13;
             rtxtInvoice.Text = "";
             // 
@@ -212,7 +212,7 @@
             Controls.Add(label3);
             Margin = new Padding(3, 4, 3, 4);
             Name = "UCRecharge";
-            Size = new Size(801, 549);
+            Size = new Size(1168, 735);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
