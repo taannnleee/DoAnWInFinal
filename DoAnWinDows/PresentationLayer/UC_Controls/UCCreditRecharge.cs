@@ -50,21 +50,61 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
             return cusacc;
         }
 
+        public bool checkBalance()
+        {
+            CustomerAccount cusAcc = getDataCusAcc();
+            CreditCard credit = getDataCredit();
+            BigInteger bigA = BigInteger.Parse(cusAcc.Balance);
+            BigInteger bigB = BigInteger.Parse(credit.Moneyspent);
+            if (BigInteger.Compare(bigA, bigB) >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public bool IsExpiredAccount(CreditCard credit)
+        {
+            if (credit.CreditCardStatus == "Expired")
+            {
+                return true;
+            }
+            return false;
+        }
+
 
         private void btnRecharge_Click(object sender, EventArgs e)
         {
             CreditCard credit = getDataCredit();
             CustomerAccount cusacc = getDataCusAcc();
-            if (creditRechargeDao.creditRecharge(credit, cusacc))
+            if (IsExpiredAccount(credit))
             {
-                MessageBox.Show("Success");
+                int number = int.Parse(credit.Moneyspent);
+                number = number + Convert.ToInt32(number* 0.1);
+                credit.Moneyspent = number.ToString();
+                MessageBox.Show("Overdue payment");
+                MessageBox.Show("Total amount payable : " + number.ToString());
+            }
+            if (checkBalance())
+            {
+                if (creditRechargeDao.creditRecharge(credit, cusacc))
+                {
+                    MessageBox.Show("Success");
+                    MessageBox.Show("Total payment:" + credit.Moneyspent);
+                }
+                else
+                {
+                    MessageBox.Show("Fail");
+                }
             }
             else
             {
-                MessageBox.Show("Su");
+                MessageBox.Show("The amount in the original account is not enough");
             }
             
-            //MessageBox.Show("Total payment:" + credit.Moneyspent);
         }
 
         string[] columnNames1 = { "CVVCode", "MoneySpent" };

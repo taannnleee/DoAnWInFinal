@@ -99,6 +99,8 @@ namespace DoAnWinDows.DataAccessLayer
                 reader.Read();
                 credit.Moneyspent = reader["MoneySpent"].ToString();
                 credit.Accountnumber = Convert.ToInt32(reader["AccountNumber"]);
+                credit.Cvvcode = reader["CVVCode"].ToString();
+                credit.CreditCardStatus = reader["CreditCardStatus"].ToString();
             }
             reader.Close();
             return credit;

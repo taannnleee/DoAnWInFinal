@@ -42,14 +42,12 @@ namespace DoAnWinDows.DataAccessLayer
 
         public bool creditRecharge(CreditCard credit, CustomerAccount cussacc)
         {
-                string sqlCreditCard = string.Format("UPDATE CreditCard SET MoneySpent = CAST(MoneySpent AS int) - {0} WHERE CVVCode = '{1}'", int.Parse(credit.Moneyspent),credit.Cvvcode.ToString());
-                //string customerAccount = string.Format("UPDATE CustomerAccount SET Balance = CAST(Balance AS int) - {0} WHERE AccountNumber = '{1}'", int.Parse(credit.Moneyspent), credit.Accountnumber);
-                //string creditDetails = string.Format("DELETE FROM CreditDetails WHERE CVVCode= '{0}'", credit.Cvvcode);
-                //connection.Open();
-                //SqlTransaction transaction = connection.BeginTransaction();
+                string sqlCreditCard = string.Format("UPDATE CreditCard SET MoneySpent = CAST(MoneySpent AS int) - {0} WHERE CVVCode = '{1}'", int.Parse(credit.Moneyspent),credit.Cvvcode);
+                string customerAccount = string.Format("UPDATE CustomerAccount SET Balance = CAST(Balance AS int) - {0} WHERE AccountNumber = '{1}'", int.Parse(credit.Moneyspent), credit.Accountnumber);
+                string creditDetails = string.Format("DELETE FROM CreditDetails WHERE CVVCode= '{0}'", credit.Cvvcode);
                 try
                 {
-                    if (dbconnect.ThucThi(sqlCreditCard))
+                    if (dbconnect.ThucThi(sqlCreditCard) && dbconnect.ThucThi(customerAccount) && dbconnect.ThucThi(creditDetails))
                     {
                         return true;
                     }
