@@ -58,11 +58,11 @@
             // 
             gvQuanLy.Anchor = AnchorStyles.Top;
             gvQuanLy.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gvQuanLy.Location = new Point(3, 317);
+            gvQuanLy.Location = new Point(39, 317);
             gvQuanLy.Name = "gvQuanLy";
             gvQuanLy.RowHeadersWidth = 51;
             gvQuanLy.RowTemplate.Height = 29;
-            gvQuanLy.Size = new Size(909, 220);
+            gvQuanLy.Size = new Size(1147, 378);
             gvQuanLy.TabIndex = 268;
             // 
             // label3
@@ -70,7 +70,7 @@
             label3.Anchor = AnchorStyles.Top;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(336, 0);
+            label3.Location = new Point(493, 0);
             label3.Name = "label3";
             label3.Size = new Size(251, 45);
             label3.TabIndex = 266;
@@ -81,7 +81,7 @@
             btnTatToan.Anchor = AnchorStyles.Top;
             btnTatToan.AutoSize = true;
             btnTatToan.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnTatToan.Location = new Point(650, 279);
+            btnTatToan.Location = new Point(857, 279);
             btnTatToan.Name = "btnTatToan";
             btnTatToan.Size = new Size(129, 30);
             btnTatToan.TabIndex = 265;
@@ -94,7 +94,7 @@
             btnThem.Anchor = AnchorStyles.Top;
             btnThem.AutoSize = true;
             btnThem.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnThem.Location = new Point(499, 279);
+            btnThem.Location = new Point(656, 279);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(103, 30);
             btnThem.TabIndex = 264;
@@ -105,7 +105,7 @@
             // btnSearch
             // 
             btnSearch.Anchor = AnchorStyles.Top;
-            btnSearch.Location = new Point(797, 245);
+            btnSearch.Location = new Point(1082, 245);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(63, 29);
             btnSearch.TabIndex = 283;
@@ -116,15 +116,15 @@
             // txtSearch
             // 
             txtSearch.Anchor = AnchorStyles.Top;
-            txtSearch.Location = new Point(499, 245);
+            txtSearch.Location = new Point(656, 245);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(283, 27);
+            txtSearch.Size = new Size(420, 27);
             txtSearch.TabIndex = 284;
             // 
             // btnRefresh
             // 
             btnRefresh.Anchor = AnchorStyles.Top;
-            btnRefresh.Location = new Point(867, 245);
+            btnRefresh.Location = new Point(1152, 245);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(34, 29);
             btnRefresh.TabIndex = 285;
@@ -136,7 +136,7 @@
             // 
             btnInterest.Anchor = AnchorStyles.Top;
             btnInterest.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            btnInterest.Location = new Point(798, 280);
+            btnInterest.Location = new Point(1083, 280);
             btnInterest.Name = "btnInterest";
             btnInterest.Size = new Size(103, 29);
             btnInterest.TabIndex = 286;
@@ -149,7 +149,7 @@
             lblAccountNumber.Anchor = AnchorStyles.Top;
             lblAccountNumber.AutoSize = true;
             lblAccountNumber.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblAccountNumber.Location = new Point(54, 54);
+            lblAccountNumber.Location = new Point(156, 51);
             lblAccountNumber.Name = "lblAccountNumber";
             lblAccountNumber.Size = new Size(125, 20);
             lblAccountNumber.TabIndex = 287;
@@ -160,7 +160,7 @@
             lblAmount.Anchor = AnchorStyles.Top;
             lblAmount.AutoSize = true;
             lblAmount.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblAmount.Location = new Point(54, 85);
+            lblAmount.Location = new Point(156, 82);
             lblAmount.Name = "lblAmount";
             lblAmount.Size = new Size(67, 20);
             lblAmount.TabIndex = 288;
@@ -171,7 +171,7 @@
             lblInterestRate.Anchor = AnchorStyles.Top;
             lblInterestRate.AutoSize = true;
             lblInterestRate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblInterestRate.Location = new Point(54, 117);
+            lblInterestRate.Location = new Point(156, 114);
             lblInterestRate.Name = "lblInterestRate";
             lblInterestRate.Size = new Size(96, 20);
             lblInterestRate.TabIndex = 289;
@@ -182,7 +182,7 @@
             lblCreatedDate.Anchor = AnchorStyles.Top;
             lblCreatedDate.AutoSize = true;
             lblCreatedDate.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            lblCreatedDate.Location = new Point(56, 289);
+            lblCreatedDate.Location = new Point(158, 286);
             lblCreatedDate.Name = "lblCreatedDate";
             lblCreatedDate.Size = new Size(100, 20);
             lblCreatedDate.TabIndex = 290;
@@ -191,7 +191,7 @@
             // txtAccountNumber
             // 
             txtAccountNumber.Anchor = AnchorStyles.Top;
-            txtAccountNumber.Location = new Point(197, 51);
+            txtAccountNumber.Location = new Point(299, 48);
             txtAccountNumber.Name = "txtAccountNumber";
             txtAccountNumber.Size = new Size(150, 27);
             txtAccountNumber.TabIndex = 292;
@@ -199,7 +199,7 @@
             // txtAmount
             // 
             txtAmount.Anchor = AnchorStyles.Top;
-            txtAmount.Location = new Point(173, 86);
+            txtAmount.Location = new Point(275, 83);
             txtAmount.Name = "txtAmount";
             txtAmount.Size = new Size(221, 27);
             txtAmount.TabIndex = 293;
@@ -207,7 +207,7 @@
             // dtpCreatedDate
             // 
             dtpCreatedDate.Anchor = AnchorStyles.Top;
-            dtpCreatedDate.Location = new Point(159, 284);
+            dtpCreatedDate.Location = new Point(261, 281);
             dtpCreatedDate.Name = "dtpCreatedDate";
             dtpCreatedDate.Size = new Size(221, 27);
             dtpCreatedDate.TabIndex = 294;
@@ -217,7 +217,7 @@
             cboInterestRate.Anchor = AnchorStyles.Top;
             cboInterestRate.FormattingEnabled = true;
             cboInterestRate.Items.AddRange(new object[] { "3 month 3.0%", "6 month 3.5%", "9 month 4.0%", "12 month 4.5%" });
-            cboInterestRate.Location = new Point(173, 119);
+            cboInterestRate.Location = new Point(275, 116);
             cboInterestRate.Name = "cboInterestRate";
             cboInterestRate.Size = new Size(221, 28);
             cboInterestRate.TabIndex = 295;
@@ -230,7 +230,7 @@
             grbRenewalOption.Controls.Add(rdbtnPrincipalAutoRenew);
             grbRenewalOption.FlatStyle = FlatStyle.System;
             grbRenewalOption.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            grbRenewalOption.Location = new Point(56, 153);
+            grbRenewalOption.Location = new Point(158, 150);
             grbRenewalOption.Name = "grbRenewalOption";
             grbRenewalOption.Size = new Size(291, 125);
             grbRenewalOption.TabIndex = 299;
@@ -278,7 +278,7 @@
             btnCheck.Anchor = AnchorStyles.Top;
             btnCheck.BackgroundImage = Properties.Resources.maxresdefault;
             btnCheck.BackgroundImageLayout = ImageLayout.Stretch;
-            btnCheck.Location = new Point(353, 51);
+            btnCheck.Location = new Point(455, 48);
             btnCheck.Name = "btnCheck";
             btnCheck.Size = new Size(41, 29);
             btnCheck.TabIndex = 300;
@@ -287,9 +287,9 @@
             // 
             // rtxtInformation
             // 
-            rtxtInformation.Location = new Point(499, 48);
+            rtxtInformation.Location = new Point(645, 48);
             rtxtInformation.Name = "rtxtInformation";
-            rtxtInformation.Size = new Size(413, 191);
+            rtxtInformation.Size = new Size(541, 191);
             rtxtInformation.TabIndex = 301;
             rtxtInformation.Text = "";
             // 
@@ -319,7 +319,7 @@
             Controls.Add(btnThem);
             Margin = new Padding(3, 4, 3, 4);
             Name = "UCBankSavings";
-            Size = new Size(915, 540);
+            Size = new Size(1229, 759);
             Load += UCBankSavings_Load;
             ((System.ComponentModel.ISupportInitialize)gvQuanLy).EndInit();
             grbRenewalOption.ResumeLayout(false);

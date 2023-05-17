@@ -77,10 +77,11 @@
             sidebar.Controls.Add(btnSettingPassWord);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
-            sidebar.MaximumSize = new Size(205, 661);
-            sidebar.MinimumSize = new Size(61, 661);
+            sidebar.Margin = new Padding(3, 4, 3, 4);
+            sidebar.MaximumSize = new Size(234, 881);
+            sidebar.MinimumSize = new Size(70, 881);
             sidebar.Name = "sidebar";
-            sidebar.Size = new Size(205, 661);
+            sidebar.Size = new Size(234, 881);
             sidebar.TabIndex = 0;
             // 
             // panel2
@@ -88,9 +89,10 @@
             panel2.Controls.Add(menuButton);
             panel2.Controls.Add(panel6);
             panel2.Controls.Add(lblMenu);
-            panel2.Location = new Point(3, 3);
+            panel2.Location = new Point(3, 4);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(200, 61);
+            panel2.Size = new Size(229, 81);
             panel2.TabIndex = 2;
             // 
             // menuButton
@@ -99,9 +101,10 @@
             menuButton.BorderStyle = BorderStyle.FixedSingle;
             menuButton.Cursor = Cursors.Hand;
             menuButton.Image = (Image)resources.GetObject("menuButton.Image");
-            menuButton.Location = new Point(3, 9);
+            menuButton.Location = new Point(3, 12);
+            menuButton.Margin = new Padding(3, 4, 3, 4);
             menuButton.Name = "menuButton";
-            menuButton.Size = new Size(30, 44);
+            menuButton.Size = new Size(34, 58);
             menuButton.SizeMode = PictureBoxSizeMode.StretchImage;
             menuButton.TabIndex = 0;
             menuButton.TabStop = false;
@@ -110,17 +113,19 @@
             // panel6
             // 
             panel6.Controls.Add(button4);
-            panel6.Location = new Point(3, 61);
+            panel6.Location = new Point(3, 81);
+            panel6.Margin = new Padding(3, 4, 3, 4);
             panel6.Name = "panel6";
-            panel6.Size = new Size(200, 42);
+            panel6.Size = new Size(229, 56);
             panel6.TabIndex = 6;
             // 
             // button4
             // 
             button4.ImageAlign = ContentAlignment.MiddleRight;
-            button4.Location = new Point(57, 3);
+            button4.Location = new Point(65, 4);
+            button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
-            button4.Size = new Size(145, 36);
+            button4.Size = new Size(166, 48);
             button4.TabIndex = 3;
             button4.Text = "Home";
             button4.TextAlign = ContentAlignment.MiddleLeft;
@@ -133,9 +138,9 @@
             lblMenu.BorderStyle = BorderStyle.Fixed3D;
             lblMenu.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             lblMenu.ForeColor = Color.Cyan;
-            lblMenu.Location = new Point(60, 6);
+            lblMenu.Location = new Point(69, 8);
             lblMenu.Name = "lblMenu";
-            lblMenu.Size = new Size(104, 47);
+            lblMenu.Size = new Size(128, 56);
             lblMenu.TabIndex = 1;
             lblMenu.Text = "Menu";
             // 
@@ -148,19 +153,21 @@
             homeContainer.Controls.Add(panel3);
             homeContainer.Controls.Add(btnBankSavings);
             homeContainer.Controls.Add(panel5);
-            homeContainer.Location = new Point(3, 70);
-            homeContainer.MaximumSize = new Size(200, 381);
-            homeContainer.MinimumSize = new Size(200, 69);
+            homeContainer.Location = new Point(3, 93);
+            homeContainer.Margin = new Padding(3, 4, 3, 4);
+            homeContainer.MaximumSize = new Size(229, 508);
+            homeContainer.MinimumSize = new Size(229, 92);
             homeContainer.Name = "homeContainer";
-            homeContainer.Size = new Size(200, 69);
+            homeContainer.Size = new Size(229, 92);
             homeContainer.TabIndex = 6;
             // 
             // panel8
             // 
             panel8.Controls.Add(btnRecharge);
-            panel8.Location = new Point(17, 237);
+            panel8.Location = new Point(19, 316);
+            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(183, 52);
+            panel8.Size = new Size(209, 69);
             panel8.TabIndex = 6;
             // 
             // btnRecharge
@@ -175,10 +182,11 @@
             btnRecharge.ForeColor = Color.White;
             btnRecharge.Image = (Image)resources.GetObject("btnRecharge.Image");
             btnRecharge.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRecharge.Location = new Point(-1, -10);
+            btnRecharge.Location = new Point(-1, -13);
+            btnRecharge.Margin = new Padding(3, 4, 3, 4);
             btnRecharge.Name = "btnRecharge";
-            btnRecharge.Padding = new Padding(30, 0, 0, 0);
-            btnRecharge.Size = new Size(206, 63);
+            btnRecharge.Padding = new Padding(34, 0, 0, 0);
+            btnRecharge.Size = new Size(235, 84);
             btnRecharge.TabIndex = 6;
             btnRecharge.Text = "        Recharge";
             btnRecharge.UseVisualStyleBackColor = false;
@@ -187,9 +195,10 @@
             // panel10
             // 
             panel10.Controls.Add(btnTypeLoan);
-            panel10.Location = new Point(16, 338);
+            panel10.Location = new Point(18, 451);
+            panel10.Margin = new Padding(3, 4, 3, 4);
             panel10.Name = "panel10";
-            panel10.Size = new Size(183, 44);
+            panel10.Size = new Size(209, 59);
             panel10.TabIndex = 11;
             // 
             // btnTypeLoan
@@ -204,10 +213,11 @@
             btnTypeLoan.ForeColor = Color.White;
             btnTypeLoan.Image = (Image)resources.GetObject("btnTypeLoan.Image");
             btnTypeLoan.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTypeLoan.Location = new Point(0, -6);
+            btnTypeLoan.Location = new Point(0, -8);
+            btnTypeLoan.Margin = new Padding(3, 4, 3, 4);
             btnTypeLoan.Name = "btnTypeLoan";
-            btnTypeLoan.Padding = new Padding(30, 0, 0, 0);
-            btnTypeLoan.Size = new Size(203, 49);
+            btnTypeLoan.Padding = new Padding(34, 0, 0, 0);
+            btnTypeLoan.Size = new Size(232, 65);
             btnTypeLoan.TabIndex = 10;
             btnTypeLoan.Text = "        Type of Loan";
             btnTypeLoan.UseVisualStyleBackColor = false;
@@ -216,9 +226,10 @@
             // panel9
             // 
             panel9.Controls.Add(btnCreditCard);
-            panel9.Location = new Point(16, 292);
+            panel9.Location = new Point(18, 389);
+            panel9.Margin = new Padding(3, 4, 3, 4);
             panel9.Name = "panel9";
-            panel9.Size = new Size(189, 42);
+            panel9.Size = new Size(216, 56);
             panel9.TabIndex = 11;
             // 
             // btnCreditCard
@@ -233,10 +244,11 @@
             btnCreditCard.ForeColor = Color.White;
             btnCreditCard.Image = (Image)resources.GetObject("btnCreditCard.Image");
             btnCreditCard.ImageAlign = ContentAlignment.MiddleLeft;
-            btnCreditCard.Location = new Point(1, -5);
+            btnCreditCard.Location = new Point(1, -7);
+            btnCreditCard.Margin = new Padding(3, 4, 3, 4);
             btnCreditCard.Name = "btnCreditCard";
-            btnCreditCard.Padding = new Padding(30, 0, 0, 0);
-            btnCreditCard.Size = new Size(192, 49);
+            btnCreditCard.Padding = new Padding(34, 0, 0, 0);
+            btnCreditCard.Size = new Size(219, 65);
             btnCreditCard.TabIndex = 4;
             btnCreditCard.Text = "        CreditCard";
             btnCreditCard.UseVisualStyleBackColor = false;
@@ -245,9 +257,10 @@
             // panel4
             // 
             panel4.Controls.Add(btnHome);
-            panel4.Location = new Point(0, 3);
+            panel4.Location = new Point(0, 4);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(210, 68);
+            panel4.Size = new Size(240, 91);
             panel4.TabIndex = 4;
             // 
             // btnHome
@@ -262,10 +275,11 @@
             btnHome.ForeColor = Color.White;
             btnHome.Image = (Image)resources.GetObject("btnHome.Image");
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
-            btnHome.Location = new Point(1, 3);
+            btnHome.Location = new Point(1, 4);
+            btnHome.Margin = new Padding(3, 4, 3, 4);
             btnHome.Name = "btnHome";
-            btnHome.Padding = new Padding(30, 0, 0, 0);
-            btnHome.Size = new Size(202, 61);
+            btnHome.Padding = new Padding(34, 0, 0, 0);
+            btnHome.Size = new Size(231, 81);
             btnHome.TabIndex = 3;
             btnHome.Text = "        Home";
             btnHome.UseVisualStyleBackColor = false;
@@ -275,16 +289,18 @@
             // 
             panel3.Controls.Add(panel1);
             panel3.Controls.Add(btnWithDraw);
-            panel3.Location = new Point(14, 73);
+            panel3.Location = new Point(16, 97);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(183, 61);
+            panel3.Size = new Size(209, 81);
             panel3.TabIndex = 4;
             // 
             // panel1
             // 
-            panel1.Location = new Point(1, 64);
+            panel1.Location = new Point(1, 85);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(183, 67);
+            panel1.Size = new Size(209, 89);
             panel1.TabIndex = 5;
             // 
             // btnWithDraw
@@ -299,10 +315,11 @@
             btnWithDraw.ForeColor = Color.White;
             btnWithDraw.Image = (Image)resources.GetObject("btnWithDraw.Image");
             btnWithDraw.ImageAlign = ContentAlignment.MiddleLeft;
-            btnWithDraw.Location = new Point(-1, -5);
+            btnWithDraw.Location = new Point(-1, -7);
+            btnWithDraw.Margin = new Padding(3, 4, 3, 4);
             btnWithDraw.Name = "btnWithDraw";
-            btnWithDraw.Padding = new Padding(30, 0, 0, 0);
-            btnWithDraw.Size = new Size(206, 63);
+            btnWithDraw.Padding = new Padding(34, 0, 0, 0);
+            btnWithDraw.Size = new Size(235, 84);
             btnWithDraw.TabIndex = 7;
             btnWithDraw.Text = "        WithDraw";
             btnWithDraw.UseVisualStyleBackColor = false;
@@ -320,10 +337,11 @@
             btnBankSavings.ForeColor = Color.White;
             btnBankSavings.Image = (Image)resources.GetObject("btnBankSavings.Image");
             btnBankSavings.ImageAlign = ContentAlignment.MiddleLeft;
-            btnBankSavings.Location = new Point(14, 127);
+            btnBankSavings.Location = new Point(16, 169);
+            btnBankSavings.Margin = new Padding(3, 4, 3, 4);
             btnBankSavings.Name = "btnBankSavings";
-            btnBankSavings.Padding = new Padding(30, 0, 0, 0);
-            btnBankSavings.Size = new Size(198, 63);
+            btnBankSavings.Padding = new Padding(34, 0, 0, 0);
+            btnBankSavings.Size = new Size(226, 84);
             btnBankSavings.TabIndex = 8;
             btnBankSavings.Text = "        BankSavings";
             btnBankSavings.UseVisualStyleBackColor = false;
@@ -333,16 +351,18 @@
             // 
             panel5.Controls.Add(panel7);
             panel5.Controls.Add(btnTransactions);
-            panel5.Location = new Point(15, 184);
+            panel5.Location = new Point(17, 245);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(183, 52);
+            panel5.Size = new Size(209, 69);
             panel5.TabIndex = 5;
             // 
             // panel7
             // 
-            panel7.Location = new Point(1, 69);
+            panel7.Location = new Point(1, 92);
+            panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(183, 52);
+            panel7.Size = new Size(209, 69);
             panel7.TabIndex = 6;
             // 
             // btnTransactions
@@ -357,10 +377,11 @@
             btnTransactions.ForeColor = Color.White;
             btnTransactions.Image = (Image)resources.GetObject("btnTransactions.Image");
             btnTransactions.ImageAlign = ContentAlignment.MiddleLeft;
-            btnTransactions.Location = new Point(0, -3);
+            btnTransactions.Location = new Point(0, -4);
+            btnTransactions.Margin = new Padding(3, 4, 3, 4);
             btnTransactions.Name = "btnTransactions";
-            btnTransactions.Padding = new Padding(30, 0, 0, 0);
-            btnTransactions.Size = new Size(206, 55);
+            btnTransactions.Padding = new Padding(34, 0, 0, 0);
+            btnTransactions.Size = new Size(235, 73);
             btnTransactions.TabIndex = 5;
             btnTransactions.Text = "        Transactions";
             btnTransactions.UseVisualStyleBackColor = false;
@@ -378,10 +399,11 @@
             btnSettingPassWord.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnSettingPassWord.ForeColor = Color.White;
             btnSettingPassWord.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettingPassWord.Location = new Point(3, 145);
+            btnSettingPassWord.Location = new Point(3, 193);
+            btnSettingPassWord.Margin = new Padding(3, 4, 3, 4);
             btnSettingPassWord.Name = "btnSettingPassWord";
-            btnSettingPassWord.Padding = new Padding(30, 0, 0, 0);
-            btnSettingPassWord.Size = new Size(199, 48);
+            btnSettingPassWord.Padding = new Padding(34, 0, 0, 0);
+            btnSettingPassWord.Size = new Size(227, 64);
             btnSettingPassWord.TabIndex = 4;
             btnSettingPassWord.Text = "  Setting PassWord";
             btnSettingPassWord.TextAlign = ContentAlignment.MiddleRight;
@@ -400,19 +422,21 @@
             // 
             // panelEmployee
             // 
-            panelEmployee.Location = new Point(206, 3);
+            panelEmployee.Location = new Point(235, 4);
+            panelEmployee.Margin = new Padding(3, 4, 3, 4);
             panelEmployee.Name = "panelEmployee";
-            panelEmployee.Size = new Size(1075, 746);
+            panelEmployee.Size = new Size(1229, 995);
             panelEmployee.TabIndex = 2;
             // 
             // FEmployee
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.SteelBlue;
-            ClientSize = new Size(1284, 749);
+            ClientSize = new Size(1467, 999);
             Controls.Add(panelEmployee);
             Controls.Add(sidebar);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FEmployee";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FEmployee";
