@@ -16,6 +16,10 @@ namespace DoAnWinDows.Helpers
                 {
                     ((TextBox)control).Text = string.Empty;
                 }
+                else if (control is GroupBox)
+                {
+                    ClearAll(control.Controls);
+                }
             }
         }
     }

@@ -20,32 +20,51 @@ namespace DoAnWinDows.DataAccessLayer
             return dbconnect.DanhSach(sqlStr);
         }
 
-        public bool creditRecharge(CreditCard credit, int accNumber, DateTime currentime)
+        public DataTable DebtDetails(CreditCard credit)
         {
-            
-            using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnStr))
+            string sqlStr = string.Format("Select * From CreditDetails Where CVVCode ='{0}' ", credit.Cvvcode);
+            return dbconnect.DanhSach(sqlStr);
+        }
+        public CreditCard GetDataCredit(string cvvcode)
+        {
+            String sqlQuery = String.Format("SELECT * FROM CreditCard WHERE CVVCode = '{0}'", cvvcode);
+            SqlDataReader reader = dbconnect.GetDataReader(sqlQuery);
+            CreditCard credit = new CreditCard();
+            if (reader != null && reader.HasRows)
             {
-                string sqlCreditCard = string.Format("UPDATE CreditCard SET MoneySpent = CAST(MoneySpent AS float) - {0}, ExpirationDate ='{1}' WHERE CVVCode = '{2}'", float.Parse(credit.Moneyspent),currentime ,credit.Cvvcode);
-                string customerAccount = string.Format("UPDATE CustomerAccount SET Balance = CAST(Balance AS float) - {0} WHERE AccountNumber = '{1}'", float.Parse(credit.Moneyspent), accNumber);
-                connection.Open();
-                SqlTransaction transaction = connection.BeginTransaction();
+                reader.Read();
+                credit.Moneyspent = reader["MoneySpent"].ToString();
+                credit.Creditlimit = reader["CreditLimit"].ToString();
+            }
+            reader.Close();
+            return credit;
+        }
+
+        public bool creditRecharge(CreditCard credit, CustomerAccount cussacc)
+        {
+                string sqlCreditCard = string.Format("UPDATE CreditCard SET MoneySpent = CAST(MoneySpent AS int) - {0} WHERE CVVCode = '{1}'", int.Parse(credit.Moneyspent),credit.Cvvcode.ToString());
+                //string customerAccount = string.Format("UPDATE CustomerAccount SET Balance = CAST(Balance AS int) - {0} WHERE AccountNumber = '{1}'", int.Parse(credit.Moneyspent), credit.Accountnumber);
+                //string creditDetails = string.Format("DELETE FROM CreditDetails WHERE CVVCode= '{0}'", credit.Cvvcode);
+                //connection.Open();
+                //SqlTransaction transaction = connection.BeginTransaction();
                 try
                 {
-                    if (dbconnect.checkDataTransaction(customerAccount, transaction) &&
-                    dbconnect.checkDataTransaction(sqlCreditCard, transaction))
+                    if (dbconnect.ThucThi(sqlCreditCard))
                     {
-                            transaction.Commit();
-                            return true;
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
                     }
                 }
                 catch (Exception ex)
                 {
-                    transaction.Rollback();
                     Console.WriteLine("Error occurred: " + ex.Message);
                     return false;
                 }
                 return false;
-            }
+            
         }
 
         public void LoadRowInCreditCardTable(DataGridView dgv, string[] columnNames, Dictionary<string, Control> textBoxMapping)

@@ -117,6 +117,12 @@ namespace DoAnWinDows.PresentationLayer.Forms
             UCMenuLoan menuLoan = new UCMenuLoan();
             AddUserControl(menuLoan);
         }
+
+        private void btnSettingPassWord_Click(object sender, EventArgs e)
+        {
+            UCChangePassword changepass = new UCChangePassword();
+            AddUserControl(changepass);
+        }
     }
 }
 

@@ -15,6 +15,7 @@ namespace DoAnWinDows.BusinessLayer.Models
         private DateTime datecreated;
         private int accountnumber;
         private string cvvcode;
+        private string creditcardstatus;
         public DateTime Expirationdate { get => expirationdate; set => expirationdate = value; }
         public string Creditlimit { get => creditlimit; set => creditlimit = value; }
         public DateTime Datecreated { get => datecreated; set => datecreated = value; }
@@ -22,10 +23,11 @@ namespace DoAnWinDows.BusinessLayer.Models
         public int Creditcardid { get => creditcardid; set => creditcardid = value; }
         public string Cvvcode { get => cvvcode; set => cvvcode = value; }
         public string Moneyspent { get => moneyspent; set => moneyspent = value; }
+        public string CreditCardStatus { get => creditcardstatus; set => creditcardstatus = value; }
 
         public CreditCard() { }
 
-        public CreditCard(DateTime expirationdate, string creditlimit, string moneyspent, DateTime datecreated, int accountnumber,string cvvcode)
+        public CreditCard(DateTime expirationdate, string creditlimit, string moneyspent, DateTime datecreated, int accountnumber,string cvvcode,string creditcardstatus)
         {
             Expirationdate = expirationdate;
             Creditlimit = creditlimit;
@@ -33,6 +35,7 @@ namespace DoAnWinDows.BusinessLayer.Models
             Datecreated = datecreated;
             Accountnumber = accountnumber;
             Cvvcode = cvvcode;
+            CreditCardStatus = creditcardstatus;
         }
 
         public CreditCard(string cvvcode)

@@ -39,7 +39,6 @@
             lblPhoneNumber = new Label();
             txtEmployeeName = new TextBox();
             btnClearAll = new Button();
-            btnSearch = new Button();
             cboGender = new ComboBox();
             lblGender = new Label();
             lblEmployeeName = new Label();
@@ -68,18 +67,18 @@
             // gvEmployee
             // 
             gvEmployee.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gvEmployee.Location = new Point(19, 296);
+            gvEmployee.Location = new Point(12, 360);
             gvEmployee.Margin = new Padding(3, 2, 3, 2);
             gvEmployee.Name = "gvEmployee";
             gvEmployee.RowHeadersWidth = 51;
             gvEmployee.RowTemplate.Height = 29;
-            gvEmployee.Size = new Size(295, 156);
+            gvEmployee.Size = new Size(1045, 290);
             gvEmployee.TabIndex = 253;
             gvEmployee.CellClick += gvEmployee_CellClick;
             // 
             // txtPassWord
             // 
-            txtPassWord.Location = new Point(437, 34);
+            txtPassWord.Location = new Point(586, 63);
             txtPassWord.Margin = new Padding(3, 2, 3, 2);
             txtPassWord.Name = "txtPassWord";
             txtPassWord.Size = new Size(199, 23);
@@ -87,7 +86,7 @@
             // 
             // txtUserName
             // 
-            txtUserName.Location = new Point(437, 2);
+            txtUserName.Location = new Point(586, 26);
             txtUserName.Margin = new Padding(3, 2, 3, 2);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(199, 23);
@@ -96,7 +95,7 @@
             // lblPassWord
             // 
             lblPassWord.AutoSize = true;
-            lblPassWord.Location = new Point(349, 34);
+            lblPassWord.Location = new Point(486, 71);
             lblPassWord.Name = "lblPassWord";
             lblPassWord.Size = new Size(59, 15);
             lblPassWord.TabIndex = 271;
@@ -105,7 +104,7 @@
             // lblUserName
             // 
             lblUserName.AutoSize = true;
-            lblUserName.Location = new Point(346, 5);
+            lblUserName.Location = new Point(483, 34);
             lblUserName.Name = "lblUserName";
             lblUserName.Size = new Size(62, 15);
             lblUserName.TabIndex = 270;
@@ -122,7 +121,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(22, 279);
+            lblEmail.Location = new Point(16, 279);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 268;
@@ -132,7 +131,7 @@
             // 
             cboAccountType.FormattingEnabled = true;
             cboAccountType.Items.AddRange(new object[] { "Normal Account", "Premium Account" });
-            cboAccountType.Location = new Point(487, 124);
+            cboAccountType.Location = new Point(586, 160);
             cboAccountType.Name = "cboAccountType";
             cboAccountType.Size = new Size(199, 23);
             cboAccountType.TabIndex = 267;
@@ -141,7 +140,7 @@
             // lblPhoneNumber
             // 
             lblPhoneNumber.AutoSize = true;
-            lblPhoneNumber.Location = new Point(18, 247);
+            lblPhoneNumber.Location = new Point(12, 247);
             lblPhoneNumber.Name = "lblPhoneNumber";
             lblPhoneNumber.Size = new Size(85, 15);
             lblPhoneNumber.TabIndex = 266;
@@ -158,24 +157,13 @@
             // btnClearAll
             // 
             btnClearAll.AutoSize = true;
-            btnClearAll.Location = new Point(512, 316);
+            btnClearAll.Location = new Point(829, 315);
             btnClearAll.Margin = new Padding(3, 2, 3, 2);
             btnClearAll.Name = "btnClearAll";
             btnClearAll.Size = new Size(90, 25);
             btnClearAll.TabIndex = 264;
             btnClearAll.Text = "ClearAll";
             btnClearAll.UseVisualStyleBackColor = true;
-            // 
-            // btnSearch
-            // 
-            btnSearch.AutoSize = true;
-            btnSearch.Location = new Point(386, 316);
-            btnSearch.Margin = new Padding(3, 2, 3, 2);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(90, 25);
-            btnSearch.TabIndex = 263;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = true;
             // 
             // cboGender
             // 
@@ -190,7 +178,7 @@
             // lblGender
             // 
             lblGender.AutoSize = true;
-            lblGender.Location = new Point(18, 220);
+            lblGender.Location = new Point(13, 220);
             lblGender.Name = "lblGender";
             lblGender.Size = new Size(45, 15);
             lblGender.TabIndex = 259;
@@ -199,7 +187,7 @@
             // lblEmployeeName
             // 
             lblEmployeeName.AutoSize = true;
-            lblEmployeeName.Location = new Point(13, 64);
+            lblEmployeeName.Location = new Point(10, 64);
             lblEmployeeName.Name = "lblEmployeeName";
             lblEmployeeName.Size = new Size(91, 15);
             lblEmployeeName.TabIndex = 258;
@@ -215,7 +203,7 @@
             // 
             // txtAcountStatus
             // 
-            txtAcountStatus.Location = new Point(487, 189);
+            txtAcountStatus.Location = new Point(586, 209);
             txtAcountStatus.Margin = new Padding(3, 2, 3, 2);
             txtAcountStatus.Name = "txtAcountStatus";
             txtAcountStatus.Size = new Size(199, 23);
@@ -224,7 +212,7 @@
             // lblAddress
             // 
             lblAddress.AutoSize = true;
-            lblAddress.Location = new Point(18, 34);
+            lblAddress.Location = new Point(12, 34);
             lblAddress.Name = "lblAddress";
             lblAddress.Size = new Size(49, 15);
             lblAddress.TabIndex = 255;
@@ -233,7 +221,7 @@
             // tblAccountStatus
             // 
             tblAccountStatus.AutoSize = true;
-            tblAccountStatus.Location = new Point(380, 189);
+            tblAccountStatus.Location = new Point(482, 212);
             tblAccountStatus.Name = "tblAccountStatus";
             tblAccountStatus.Size = new Size(84, 15);
             tblAccountStatus.TabIndex = 254;
@@ -242,36 +230,36 @@
             // btnSua
             // 
             btnSua.AutoSize = true;
-            btnSua.Location = new Point(559, 274);
+            btnSua.Location = new Point(708, 315);
             btnSua.Margin = new Padding(3, 2, 3, 2);
             btnSua.Name = "btnSua";
             btnSua.Size = new Size(90, 25);
             btnSua.TabIndex = 252;
-            btnSua.Text = "Sua";
+            btnSua.Text = "Update";
             btnSua.UseVisualStyleBackColor = true;
             btnSua.Click += btnSua_Click;
             // 
             // btnXoa
             // 
             btnXoa.AutoSize = true;
-            btnXoa.Location = new Point(450, 274);
+            btnXoa.Location = new Point(599, 315);
             btnXoa.Margin = new Padding(3, 2, 3, 2);
             btnXoa.Name = "btnXoa";
             btnXoa.Size = new Size(90, 25);
             btnXoa.TabIndex = 251;
-            btnXoa.Text = "Xoa";
+            btnXoa.Text = "Delete";
             btnXoa.UseVisualStyleBackColor = true;
             btnXoa.Click += btnXoa_Click;
             // 
             // btnThem
             // 
             btnThem.AutoSize = true;
-            btnThem.Location = new Point(348, 274);
+            btnThem.Location = new Point(497, 315);
             btnThem.Margin = new Padding(3, 2, 3, 2);
             btnThem.Name = "btnThem";
             btnThem.Size = new Size(82, 25);
             btnThem.TabIndex = 250;
-            btnThem.Text = "Them";
+            btnThem.Text = "Add";
             btnThem.UseVisualStyleBackColor = true;
             btnThem.Click += btnThem_Click;
             // 
@@ -285,7 +273,7 @@
             // 
             // txtEmployeeID
             // 
-            txtEmployeeID.Location = new Point(487, 73);
+            txtEmployeeID.Location = new Point(589, 109);
             txtEmployeeID.Margin = new Padding(3, 2, 3, 2);
             txtEmployeeID.Name = "txtEmployeeID";
             txtEmployeeID.Size = new Size(199, 23);
@@ -311,7 +299,7 @@
             // lblAccountType
             // 
             lblAccountType.AutoSize = true;
-            lblAccountType.Location = new Point(385, 127);
+            lblAccountType.Location = new Point(482, 163);
             lblAccountType.Name = "lblAccountType";
             lblAccountType.Size = new Size(76, 15);
             lblAccountType.TabIndex = 242;
@@ -320,7 +308,7 @@
             // lblEmployeeID
             // 
             lblEmployeeID.AutoSize = true;
-            lblEmployeeID.Location = new Point(385, 81);
+            lblEmployeeID.Location = new Point(482, 117);
             lblEmployeeID.Name = "lblEmployeeID";
             lblEmployeeID.Size = new Size(70, 15);
             lblEmployeeID.TabIndex = 245;
@@ -399,7 +387,6 @@
             Controls.Add(lblPhoneNumber);
             Controls.Add(txtEmployeeName);
             Controls.Add(btnClearAll);
-            Controls.Add(btnSearch);
             Controls.Add(cboGender);
             Controls.Add(lblGender);
             Controls.Add(lblEmployeeName);
@@ -417,7 +404,7 @@
             Controls.Add(lblAccountType);
             Controls.Add(lblEmployeeID);
             Name = "UCEmployeeManager";
-            Size = new Size(691, 512);
+            Size = new Size(1072, 746);
             Load += UCEmployeeManager_Load;
             ((System.ComponentModel.ISupportInitialize)gvEmployee).EndInit();
             ResumeLayout(false);
@@ -437,7 +424,6 @@
         private Label lblPhoneNumber;
         private TextBox txtEmployeeName;
         private Button btnClearAll;
-        private Button btnSearch;
         private ComboBox cboGender;
         private Label lblGender;
         private Label lblEmployeeName;

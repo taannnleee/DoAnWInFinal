@@ -36,7 +36,9 @@
             txtDepositAmount = new TextBox();
             btnRecharge = new Button();
             lblDepositAmount = new Label();
+            gvCreditDetails = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)gvCreditCard).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gvCreditDetails).BeginInit();
             SuspendLayout();
             // 
             // btnCheck
@@ -54,10 +56,10 @@
             // gvCreditCard
             // 
             gvCreditCard.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gvCreditCard.Location = new Point(483, 139);
+            gvCreditCard.Location = new Point(3, 292);
             gvCreditCard.Name = "gvCreditCard";
             gvCreditCard.RowTemplate.Height = 25;
-            gvCreditCard.Size = new Size(226, 134);
+            gvCreditCard.Size = new Size(771, 111);
             gvCreditCard.TabIndex = 327;
             gvCreditCard.CellClick += gvCreditCard_CellClick;
             // 
@@ -115,10 +117,20 @@
             lblDepositAmount.TabIndex = 335;
             lblDepositAmount.Text = "DepositAmount";
             // 
+            // gvCreditDetails
+            // 
+            gvCreditDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvCreditDetails.Location = new Point(527, 98);
+            gvCreditDetails.Name = "gvCreditDetails";
+            gvCreditDetails.RowTemplate.Height = 25;
+            gvCreditDetails.Size = new Size(240, 150);
+            gvCreditDetails.TabIndex = 336;
+            // 
             // UCCreditRecharge
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(gvCreditDetails);
             Controls.Add(lblDepositAmount);
             Controls.Add(btnRecharge);
             Controls.Add(txtDepositAmount);
@@ -128,8 +140,9 @@
             Controls.Add(txtCvvCode);
             Controls.Add(lblCvvCode);
             Name = "UCCreditRecharge";
-            Size = new Size(813, 535);
+            Size = new Size(1072, 746);
             ((System.ComponentModel.ISupportInitialize)gvCreditCard).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gvCreditDetails).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -144,5 +157,6 @@
         private TextBox txtDepositAmount;
         private Button btnRecharge;
         private Label lblDepositAmount;
+        private DataGridView gvCreditDetails;
     }
 }

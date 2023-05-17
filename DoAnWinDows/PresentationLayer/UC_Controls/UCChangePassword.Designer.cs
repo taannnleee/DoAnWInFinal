@@ -28,147 +28,260 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnClearAll = new System.Windows.Forms.Button();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnComplete = new System.Windows.Forms.Button();
-            this.txtOldPassWord = new System.Windows.Forms.TextBox();
-            this.lblOldPassword = new System.Windows.Forms.Label();
-            this.lblNewPassWord = new System.Windows.Forms.Label();
-            this.txtNewPassWord = new System.Windows.Forms.TextBox();
-            this.picCaptcha = new System.Windows.Forms.PictureBox();
-            this.lblCaptcha = new System.Windows.Forms.Label();
-            this.txtCaptcha = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.picCaptcha)).BeginInit();
-            this.SuspendLayout();
+            btnClearAll = new Button();
+            btnComplete = new Button();
+            lblOldPassword = new Label();
+            lblNewPassWord = new Label();
+            picCaptcha = new PictureBox();
+            lblCaptcha = new Label();
+            lblUserName = new Label();
+            label3 = new Label();
+            txtUserName = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            txtOldPassWord = new TextBox();
+            txtNewPassWord = new TextBox();
+            txtCaptcha = new TextBox();
+            label4 = new Label();
+            gvChangePassWord = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)picCaptcha).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gvChangePassWord).BeginInit();
+            SuspendLayout();
             // 
             // btnClearAll
             // 
-            this.btnClearAll.AutoSize = true;
-            this.btnClearAll.Location = new System.Drawing.Point(269, 305);
-            this.btnClearAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(90, 25);
-            this.btnClearAll.TabIndex = 278;
-            this.btnClearAll.Text = "ClearAll";
-            this.btnClearAll.UseVisualStyleBackColor = true;
-            this.btnClearAll.Click += new System.EventHandler(this.btnClearAll_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.AutoSize = true;
-            this.btnExit.Location = new System.Drawing.Point(433, 305);
-            this.btnExit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(90, 25);
-            this.btnExit.TabIndex = 267;
-            this.btnExit.Text = "Exit";
-            this.btnExit.UseVisualStyleBackColor = true;
+            btnClearAll.AutoSize = true;
+            btnClearAll.Location = new Point(426, 573);
+            btnClearAll.Margin = new Padding(5, 3, 5, 3);
+            btnClearAll.Name = "btnClearAll";
+            btnClearAll.Size = new Size(141, 42);
+            btnClearAll.TabIndex = 278;
+            btnClearAll.Text = "ClearAll";
+            btnClearAll.UseVisualStyleBackColor = true;
+            btnClearAll.Click += btnClearAll_Click;
             // 
             // btnComplete
             // 
-            this.btnComplete.AutoSize = true;
-            this.btnComplete.Location = new System.Drawing.Point(116, 305);
-            this.btnComplete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnComplete.Name = "btnComplete";
-            this.btnComplete.Size = new System.Drawing.Size(82, 25);
-            this.btnComplete.TabIndex = 266;
-            this.btnComplete.Text = "Complete";
-            this.btnComplete.UseVisualStyleBackColor = true;
-            this.btnComplete.Click += new System.EventHandler(this.btnComplete_Click);
-            // 
-            // txtOldPassWord
-            // 
-            this.txtOldPassWord.Location = new System.Drawing.Point(253, 120);
-            this.txtOldPassWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtOldPassWord.Name = "txtOldPassWord";
-            this.txtOldPassWord.Size = new System.Drawing.Size(199, 23);
-            this.txtOldPassWord.TabIndex = 262;
+            btnComplete.AutoSize = true;
+            btnComplete.Location = new Point(55, 573);
+            btnComplete.Margin = new Padding(5, 3, 5, 3);
+            btnComplete.Name = "btnComplete";
+            btnComplete.Size = new Size(129, 42);
+            btnComplete.TabIndex = 266;
+            btnComplete.Text = "Complete";
+            btnComplete.UseVisualStyleBackColor = true;
+            btnComplete.Click += btnComplete_Click;
             // 
             // lblOldPassword
             // 
-            this.lblOldPassword.AutoSize = true;
-            this.lblOldPassword.Location = new System.Drawing.Point(169, 128);
-            this.lblOldPassword.Name = "lblOldPassword";
-            this.lblOldPassword.Size = new System.Drawing.Size(78, 15);
-            this.lblOldPassword.TabIndex = 258;
-            this.lblOldPassword.Text = "OldPassWord";
+            lblOldPassword.AutoSize = true;
+            lblOldPassword.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblOldPassword.ForeColor = Color.White;
+            lblOldPassword.Location = new Point(20, 156);
+            lblOldPassword.Margin = new Padding(5, 0, 5, 0);
+            lblOldPassword.Name = "lblOldPassword";
+            lblOldPassword.Size = new Size(131, 25);
+            lblOldPassword.TabIndex = 258;
+            lblOldPassword.Text = "OldPassWord";
             // 
             // lblNewPassWord
             // 
-            this.lblNewPassWord.AutoSize = true;
-            this.lblNewPassWord.Location = new System.Drawing.Point(169, 175);
-            this.lblNewPassWord.Name = "lblNewPassWord";
-            this.lblNewPassWord.Size = new System.Drawing.Size(83, 15);
-            this.lblNewPassWord.TabIndex = 279;
-            this.lblNewPassWord.Text = "NewPassWord";
-            // 
-            // txtNewPassWord
-            // 
-            this.txtNewPassWord.Location = new System.Drawing.Point(253, 167);
-            this.txtNewPassWord.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtNewPassWord.Name = "txtNewPassWord";
-            this.txtNewPassWord.Size = new System.Drawing.Size(199, 23);
-            this.txtNewPassWord.TabIndex = 280;
+            lblNewPassWord.AutoSize = true;
+            lblNewPassWord.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblNewPassWord.ForeColor = Color.White;
+            lblNewPassWord.Location = new Point(20, 268);
+            lblNewPassWord.Margin = new Padding(5, 0, 5, 0);
+            lblNewPassWord.Name = "lblNewPassWord";
+            lblNewPassWord.Size = new Size(140, 25);
+            lblNewPassWord.TabIndex = 279;
+            lblNewPassWord.Text = "NewPassWord";
             // 
             // picCaptcha
             // 
-            this.picCaptcha.Location = new System.Drawing.Point(399, 213);
-            this.picCaptcha.Name = "picCaptcha";
-            this.picCaptcha.Size = new System.Drawing.Size(102, 64);
-            this.picCaptcha.TabIndex = 281;
-            this.picCaptcha.TabStop = false;
+            picCaptcha.Location = new Point(460, 373);
+            picCaptcha.Margin = new Padding(5);
+            picCaptcha.Name = "picCaptcha";
+            picCaptcha.Size = new Size(201, 55);
+            picCaptcha.TabIndex = 281;
+            picCaptcha.TabStop = false;
             // 
             // lblCaptcha
             // 
-            this.lblCaptcha.AutoSize = true;
-            this.lblCaptcha.Location = new System.Drawing.Point(169, 244);
-            this.lblCaptcha.Name = "lblCaptcha";
-            this.lblCaptcha.Size = new System.Drawing.Size(51, 15);
-            this.lblCaptcha.TabIndex = 282;
-            this.lblCaptcha.Text = "Captcha";
+            lblCaptcha.AutoSize = true;
+            lblCaptcha.ForeColor = Color.White;
+            lblCaptcha.Location = new Point(20, 439);
+            lblCaptcha.Margin = new Padding(5, 0, 5, 0);
+            lblCaptcha.Name = "lblCaptcha";
+            lblCaptcha.Size = new Size(81, 25);
+            lblCaptcha.TabIndex = 282;
+            lblCaptcha.Text = "Captcha";
+            // 
+            // lblUserName
+            // 
+            lblUserName.AutoSize = true;
+            lblUserName.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblUserName.ForeColor = Color.White;
+            lblUserName.Location = new Point(20, 32);
+            lblUserName.Margin = new Padding(5, 0, 5, 0);
+            lblUserName.Name = "lblUserName";
+            lblUserName.Size = new Size(104, 25);
+            lblUserName.TabIndex = 284;
+            lblUserName.Text = "UserName";
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.White;
+            label3.Location = new Point(187, 57);
+            label3.Margin = new Padding(5, 0, 5, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(471, 3);
+            label3.TabIndex = 287;
+            label3.Text = "label3";
+            // 
+            // txtUserName
+            // 
+            txtUserName.BackColor = Color.SteelBlue;
+            txtUserName.BorderStyle = BorderStyle.None;
+            txtUserName.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtUserName.ForeColor = SystemColors.Window;
+            txtUserName.HideSelection = false;
+            txtUserName.Location = new Point(187, 24);
+            txtUserName.Margin = new Padding(5, 3, 5, 3);
+            txtUserName.Name = "txtUserName";
+            txtUserName.Size = new Size(475, 28);
+            txtUserName.TabIndex = 286;
+            txtUserName.TabStop = false;
+            // 
+            // label1
+            // 
+            label1.BackColor = Color.White;
+            label1.Location = new Point(184, 295);
+            label1.Margin = new Padding(5, 0, 5, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(471, 3);
+            label1.TabIndex = 291;
+            label1.Text = "label1";
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.White;
+            label2.Location = new Point(184, 191);
+            label2.Margin = new Padding(5, 0, 5, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(471, 3);
+            label2.TabIndex = 294;
+            label2.Text = "label2";
+            // 
+            // txtOldPassWord
+            // 
+            txtOldPassWord.BackColor = Color.SteelBlue;
+            txtOldPassWord.BorderStyle = BorderStyle.None;
+            txtOldPassWord.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtOldPassWord.ForeColor = SystemColors.Window;
+            txtOldPassWord.HideSelection = false;
+            txtOldPassWord.Location = new Point(187, 154);
+            txtOldPassWord.Margin = new Padding(5, 3, 5, 3);
+            txtOldPassWord.Name = "txtOldPassWord";
+            txtOldPassWord.Size = new Size(475, 28);
+            txtOldPassWord.TabIndex = 293;
+            txtOldPassWord.TabStop = false;
+            // 
+            // txtNewPassWord
+            // 
+            txtNewPassWord.BackColor = Color.SteelBlue;
+            txtNewPassWord.BorderStyle = BorderStyle.None;
+            txtNewPassWord.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtNewPassWord.ForeColor = SystemColors.Window;
+            txtNewPassWord.HideSelection = false;
+            txtNewPassWord.Location = new Point(195, 261);
+            txtNewPassWord.Margin = new Padding(5, 3, 5, 3);
+            txtNewPassWord.Name = "txtNewPassWord";
+            txtNewPassWord.Size = new Size(475, 28);
+            txtNewPassWord.TabIndex = 296;
+            txtNewPassWord.TabStop = false;
             // 
             // txtCaptcha
             // 
-            this.txtCaptcha.Location = new System.Drawing.Point(238, 244);
-            this.txtCaptcha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCaptcha.Name = "txtCaptcha";
-            this.txtCaptcha.Size = new System.Drawing.Size(155, 23);
-            this.txtCaptcha.TabIndex = 283;
+            txtCaptcha.BackColor = Color.SteelBlue;
+            txtCaptcha.BorderStyle = BorderStyle.None;
+            txtCaptcha.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            txtCaptcha.ForeColor = SystemColors.Window;
+            txtCaptcha.HideSelection = false;
+            txtCaptcha.Location = new Point(184, 436);
+            txtCaptcha.Margin = new Padding(5, 3, 5, 3);
+            txtCaptcha.Name = "txtCaptcha";
+            txtCaptcha.Size = new Size(475, 28);
+            txtCaptcha.TabIndex = 298;
+            txtCaptcha.TabStop = false;
+            // 
+            // label4
+            // 
+            label4.BackColor = Color.White;
+            label4.Location = new Point(184, 472);
+            label4.Margin = new Padding(5, 0, 5, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(471, 3);
+            label4.TabIndex = 297;
+            label4.Text = "label4";
+            // 
+            // gvChangePassWord
+            // 
+            gvChangePassWord.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvChangePassWord.Location = new Point(716, 24);
+            gvChangePassWord.Name = "gvChangePassWord";
+            gvChangePassWord.RowTemplate.Height = 25;
+            gvChangePassWord.Size = new Size(344, 591);
+            gvChangePassWord.TabIndex = 299;
             // 
             // UCChangePassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtCaptcha);
-            this.Controls.Add(this.lblCaptcha);
-            this.Controls.Add(this.picCaptcha);
-            this.Controls.Add(this.txtNewPassWord);
-            this.Controls.Add(this.lblNewPassWord);
-            this.Controls.Add(this.btnClearAll);
-            this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnComplete);
-            this.Controls.Add(this.txtOldPassWord);
-            this.Controls.Add(this.lblOldPassword);
-            this.Name = "UCChangePassword";
-            this.Size = new System.Drawing.Size(708, 442);
-            this.Load += new System.EventHandler(this.UCChangePassword_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picCaptcha)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(11F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(gvChangePassWord);
+            Controls.Add(txtCaptcha);
+            Controls.Add(label4);
+            Controls.Add(txtNewPassWord);
+            Controls.Add(label2);
+            Controls.Add(txtOldPassWord);
+            Controls.Add(label1);
+            Controls.Add(label3);
+            Controls.Add(txtUserName);
+            Controls.Add(lblUserName);
+            Controls.Add(lblCaptcha);
+            Controls.Add(picCaptcha);
+            Controls.Add(lblNewPassWord);
+            Controls.Add(btnClearAll);
+            Controls.Add(btnComplete);
+            Controls.Add(lblOldPassword);
+            Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Margin = new Padding(5);
+            Name = "UCChangePassword";
+            Size = new Size(1685, 1243);
+            Load += UCChangePassword_Load;
+            ((System.ComponentModel.ISupportInitialize)picCaptcha).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gvChangePassWord).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnClearAll;
-        private Button btnExit;
         private Button btnComplete;
-        private TextBox txtOldPassWord;
         private Label lblOldPassword;
         private Label lblNewPassWord;
-        private TextBox txtNewPassWord;
         private PictureBox picCaptcha;
         private Label lblCaptcha;
+        private Label lblUserName;
+        private Label label3;
+        private TextBox txtUserName;
+        private TextBox textBox3;
+        private Label label1;
+        private Label label2;
+        private TextBox txtOldPassWord;
+        private TextBox txtNewPassWord;
         private TextBox txtCaptcha;
+        private Label label4;
+        private DataGridView gvChangePassWord;
     }
 }
