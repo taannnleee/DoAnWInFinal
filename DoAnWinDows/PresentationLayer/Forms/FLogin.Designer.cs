@@ -81,7 +81,7 @@
             txtUserName.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             txtUserName.ForeColor = SystemColors.Window;
             txtUserName.HideSelection = false;
-            txtUserName.Location = new Point(110, 245);
+            txtUserName.Location = new Point(111, 238);
             txtUserName.Margin = new Padding(3, 2, 3, 2);
             txtUserName.Name = "txtUserName";
             txtUserName.Size = new Size(302, 28);
@@ -216,6 +216,7 @@
             Name = "FLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
+            Load += FLogin_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

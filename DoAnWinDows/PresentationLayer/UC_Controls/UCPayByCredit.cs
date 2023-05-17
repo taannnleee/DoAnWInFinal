@@ -12,6 +12,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DoAnWinDows.PresentationLayer.UC_Controls
 {
@@ -23,77 +24,100 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
             InitializeComponent();
         }
 
+        private void txtCvv_Enter(object sender, EventArgs e)
+        {
+            if (txtCvvCode.Text == "Cvv")
+            {
+                txtCvvCode.Text = "";
+            }
+        }
+
+        private void txtCvv_Leave(object sender, EventArgs e)
+        {
+            txtAvailableBalances.Text = CheckAvaiableMoney();
+        }
+
         public bool getDataCredit(CreditCard credit, string money)
         {
-            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnStr);
-            conn.Open();
-            String sqlQuery = String.Format("Select * From CreditCard Where CVVCode ='{0}'", txtCvvCode.Text);
-            SqlCommand cmd = new SqlCommand(sqlQuery, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            CreditCard creditData = payByCreditDAO.GetDataCredit(txtCvvCode.Text);
+            if (creditData != null)
             {
-                credit.Moneyspent = reader["MoneySpent"].ToString();
-                credit.Creditlimit = reader["CreditLimit"].ToString();
+                credit.Moneyspent = creditData.Moneyspent;
+                credit.Creditlimit = creditData.Creditlimit;
             }
             BigInteger bigA = BigInteger.Parse(Calculation.AddStrings(credit.Moneyspent, money));
             BigInteger bigB = BigInteger.Parse(credit.Creditlimit);
-            if (BigInteger.Compare(bigA, bigB) > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            conn.Close();
+            return BigInteger.Compare(bigA, bigB) > 0;
         }
 
-        private void panelHousePayments_Click(object sender, EventArgs e)
+        private void btnCompleted_Click(object sender, EventArgs e)
         {
+            string description = String.Format("{0}{1}", cbService.Text, cbSupplier.Text);
+            CreditDetails crdDetails = new CreditDetails(txtCvvCode.Text, Time.GetCurrentTime(), txtExpense.Text, description);
             CreditCard creditcard = new CreditCard(txtCvvCode.Text);
-            string money = "10000";
-            
+            string money = txtExpense.Text;
             if (getDataCredit(creditcard, money) == false)
             {
                 payByCreditDAO.creditPayment(creditcard, money);
+                payByCreditDAO.creditCardPaymentDetails(crdDetails);
+
                 MessageBox.Show("Success");
             }
             else
             {
-                MessageBox.Show("Thanh toan vuot qua gioi han");
+                MessageBox.Show("Payment over limit");
+            }
+            LoadListCreditDetails();
+        }
+
+        public string CheckAvaiableMoney()
+        {
+            CreditCard creditData = payByCreditDAO.GetDataCredit(txtCvvCode.Text);
+            BigInteger bigA;
+            if (!BigInteger.TryParse(creditData.Moneyspent, out bigA))
+            {
+                bigA = BigInteger.One;
+            }
+            BigInteger bigB;
+            if (!BigInteger.TryParse(creditData.Creditlimit, out bigB))
+            {
+                bigB = BigInteger.One;
+            }
+            return (bigB - bigA).ToString();
+        }
+
+        private void cbService_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cbSupplier.Items.Clear();
+            if (cbService.SelectedIndex == 0)
+            {
+                cbSupplier.Text = "California Water Service Group (CWSG)";
+                cbSupplier.Items.Add("California Water Service Group (CWSG)");
+                cbSupplier.Items.Add("American States Water Company");
+                cbSupplier.Items.Add("New Jersey American Water");
+            }
+            else if (cbService.SelectedIndex == 1)
+            {
+                cbSupplier.Text = "Pacific Gas and Electric Company (PG&E)";
+                cbSupplier.Items.Add("Pacific Gas and Electric Company (PG&E)");
+                cbSupplier.Items.Add("Southern California Edison (SCE)");
+                cbSupplier.Items.Add("American Electric Power (AEP)");
+            }
+            else if (cbService.SelectedIndex == 2)
+            {
+                cbService.Text = "Greystar";
+                cbSupplier.Items.Add("Greystar");
+                cbSupplier.Items.Add("UDR, Inc.");
             }
         }
 
-        private void panelElectricityPayments_Click(object sender, EventArgs e)
+        public void LoadListCreditDetails()
         {
-            CreditCard creditcard = new CreditCard(txtCvvCode.Text);
-            string money = "10000";
-
-            if (getDataCredit(creditcard, money) == false)
-            {
-                payByCreditDAO.creditPayment(creditcard, money);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Thanh toan vuot qua gioi han");
-            }
+            this.gvCreditDetails.DataSource = payByCreditDAO.DanhSachQuanLy(txtCvvCode.Text);
         }
-
-        private void panelWaterPayments_Click(object sender, EventArgs e)
+        private void UCPayByCredit_Load(object sender, EventArgs e)
         {
-            CreditCard creditcard = new CreditCard(txtCvvCode.Text);
-            string money = "10000";
-
-            if (getDataCredit(creditcard, money) == false)
-            {
-                payByCreditDAO.creditPayment(creditcard, money);
-                MessageBox.Show("Success");
-            }
-            else
-            {
-                MessageBox.Show("Thanh toan vuot qua gioi han");
-            }
+            LoadListCreditDetails();
         }
     }
 }

@@ -34,97 +34,37 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
         {
             CreditCard credit = new CreditCard(txtCvvCode.Text, txtDepositAmount.Text);
             this.gvCreditCard.DataSource = creditRechargeDao.DebtCheck(credit);
+            this.gvCreditDetails.DataSource = creditRechargeDao.DebtDetails(credit);
         }
 
-        public bool getDataCredit(CreditCard credit)
+        public CreditCard getDataCredit()
         {
-            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnStr);
-            conn.Open();
-            String sqlQuery = String.Format("Select * From CreditCard Where CVVCode ='{0}'", txtCvvCode.Text);
-            SqlCommand cmd = new SqlCommand(sqlQuery, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                credit.Moneyspent = reader["MoneySpent"].ToString();
-                credit.Creditlimit = reader["CreditLimit"].ToString();
-                credit.Accountnumber = Convert.ToInt32(reader["AccountNumber"]);
-            }
-            BigInteger bigA = BigInteger.Parse(credit.Moneyspent);
-            BigInteger bigB = BigInteger.Parse(txtDepositAmount.Text);
-            if (BigInteger.Compare(bigA, bigB) >= 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-            conn.Close();
+            CreditCard credit = reditcardDAO.GetData(txtCvvCode.Text);
+            return credit;
         }
 
-        public bool getDataCusAcc(CustomerAccount cusAcc, CreditCard credit)
+        public CustomerAccount getDataCusAcc()
         {
-            SqlDataReader reader = reditcardDAO.GetDataCredit(Convert.ToInt32(credit.Accountnumber));
-            if (reader != null)
-            {
-                cusAcc.Balance = reader["Balance"].ToString();
-            }
-            BigInteger bigB = BigInteger.Parse(txtDepositAmount.Text);
-            BigInteger bigA = BigInteger.Parse(Math.Round(Convert.ToDouble(cusAcc.Balance)).ToString());
-            if (BigInteger.Compare(bigA, bigB) >= 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            CreditCard credit = getDataCredit();
+            CustomerAccount cusacc =  reditcardDAO.GetCusData(credit.Accountnumber.ToString());
+            return cusacc;
         }
 
-        public bool CheckMoney(CreditCard readcreditcard, CustomerAccount cusAcc)
-        {
-            bool a = getDataCredit(readcreditcard);
-            bool b = getDataCusAcc(cusAcc, readcreditcard);
-            if (a && b)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
 
         private void btnRecharge_Click(object sender, EventArgs e)
         {
-            DateTime currentime = Time.GetCurrentTime();
-            CreditCard readcreditcard = new CreditCard(txtCvvCode.Text, txtDepositAmount.Text);
-            CustomerAccount readcusAcc = new CustomerAccount();
-            CreditCard credit = new CreditCard(txtCvvCode.Text, txtDepositAmount.Text);
-            if (CheckMoney(readcreditcard, readcusAcc))
+            CreditCard credit = getDataCredit();
+            CustomerAccount cusacc = getDataCusAcc();
+            if (creditRechargeDao.creditRecharge(credit, cusacc))
             {
-                if (checkDateGap(currentime) < 31)
-                {
-                    creditRechargeDao.creditRecharge(credit, readcreditcard.Accountnumber, currentime);
-                    MessageBox.Show("Success");
-                }
-                else
-                {
-                    int latedate = checkDateGap(currentime) - 31;
-                    double interest = ((Convert.ToDouble(credit.Moneyspent) * 0.01) * latedate) + (Convert.ToDouble(credit.Moneyspent));
-                    credit.Moneyspent = interest.ToString();
-                    creditRechargeDao.creditRecharge(credit, readcreditcard.Accountnumber, currentime);
-                    MessageBox.Show("Success");
-                    //MessageBox.Show(latedate.ToString());
-                    //MessageBox.Show(credit.Moneyspent);
-                }
-                MessageBox.Show("So tien da thanh toan:" + credit.Moneyspent);
+                MessageBox.Show("Success");
             }
             else
             {
-                MessageBox.Show("Fail");
+                MessageBox.Show("Su");
             }
-            LoadCreditById();
+            
+            //MessageBox.Show("Total payment:" + credit.Moneyspent);
         }
 
         string[] columnNames1 = { "CVVCode", "MoneySpent" };
@@ -144,22 +84,6 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
             creditRechargeDao.LoadRowInCreditCardTable(gvCreditCard, columnNames1, PairData());
         }
 
-        public int checkDateGap(DateTime date)
-        {
-            DateTime expirationdate = date;
-            SqlConnection conn = new SqlConnection(Properties.Settings.Default.ConnStr);
-            conn.Open();
-            String sqlQuery = String.Format("Select * From CreditCard Where CVVCode ='{0}'", txtCvvCode.Text);
-            SqlCommand cmd = new SqlCommand(sqlQuery, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                expirationdate = Convert.ToDateTime(reader["ExpirationDate"]);
-            }
-            conn.Close();
-            TimeSpan difference = expirationdate - date;
-            int numberOfDays = Math.Abs(difference.Days);
-            return numberOfDays;
-        }
+
     }
 }

@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            toolStripMenuItem1 = new ToolStripMenuItem();
-            toolStripMenuItem2 = new ToolStripMenuItem();
-            toolStripMenuItem3 = new ToolStripMenuItem();
+            toolStripMenuCreateCredit = new ToolStripMenuItem();
+            toolStripMenuPay = new ToolStripMenuItem();
+            toolStripMenuItemCreditRecharge = new ToolStripMenuItem();
+            rechargeCredit = new Panel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -39,35 +40,46 @@
             // 
             menuStrip1.BackColor = SystemColors.GradientInactiveCaption;
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuItem1, toolStripMenuItem2, toolStripMenuItem3 });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { toolStripMenuCreateCredit, toolStripMenuPay, toolStripMenuItemCreditRecharge });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(1087, 24);
             menuStrip1.TabIndex = 1;
             menuStrip1.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // toolStripMenuCreateCredit
             // 
-            toolStripMenuItem1.Name = "toolStripMenuItem1";
-            toolStripMenuItem1.Size = new Size(110, 20);
-            toolStripMenuItem1.Text = "CreateCreditCard";
+            toolStripMenuCreateCredit.Name = "toolStripMenuCreateCredit";
+            toolStripMenuCreateCredit.Size = new Size(110, 20);
+            toolStripMenuCreateCredit.Text = "CreateCreditCard";
+            toolStripMenuCreateCredit.Click += toolStripMenuCreateCredit_Click;
             // 
-            // toolStripMenuItem2
+            // toolStripMenuPay
             // 
-            toolStripMenuItem2.Name = "toolStripMenuItem2";
-            toolStripMenuItem2.Size = new Size(83, 20);
-            toolStripMenuItem2.Text = "PayByCredit";
+            toolStripMenuPay.Name = "toolStripMenuPay";
+            toolStripMenuPay.Size = new Size(83, 20);
+            toolStripMenuPay.Text = "PayByCredit";
+            toolStripMenuPay.Click += toolStripMenuPay_Click;
             // 
-            // toolStripMenuItem3
+            // toolStripMenuItemCreditRecharge
             // 
-            toolStripMenuItem3.Name = "toolStripMenuItem3";
-            toolStripMenuItem3.Size = new Size(100, 20);
-            toolStripMenuItem3.Text = "CreditRecharge";
+            toolStripMenuItemCreditRecharge.Name = "toolStripMenuItemCreditRecharge";
+            toolStripMenuItemCreditRecharge.Size = new Size(100, 20);
+            toolStripMenuItemCreditRecharge.Text = "CreditRecharge";
+            toolStripMenuItemCreditRecharge.Click += toolStripMenuItemCreditRecharge_Click;
+            // 
+            // rechargeCredit
+            // 
+            rechargeCredit.Location = new Point(3, 27);
+            rechargeCredit.Name = "rechargeCredit";
+            rechargeCredit.Size = new Size(1072, 746);
+            rechargeCredit.TabIndex = 2;
             // 
             // UCMenuCreditCard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(rechargeCredit);
             Controls.Add(menuStrip1);
             Name = "UCMenuCreditCard";
             Size = new Size(1087, 546);
@@ -80,8 +92,9 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem toolStripMenuItem1;
-        private ToolStripMenuItem toolStripMenuItem2;
-        private ToolStripMenuItem toolStripMenuItem3;
+        private ToolStripMenuItem toolStripMenuCreateCredit;
+        private ToolStripMenuItem toolStripMenuPay;
+        private ToolStripMenuItem toolStripMenuItemCreditRecharge;
+        private Panel rechargeCredit;
     }
 }

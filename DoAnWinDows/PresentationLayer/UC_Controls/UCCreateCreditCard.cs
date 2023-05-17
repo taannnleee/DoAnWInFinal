@@ -20,6 +20,8 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
     public partial class UCCreateCreditCard : UserControl
     {
         CreditCardDAO reditcardDAO = new CreditCardDAO();
+        private string limitmoney;
+        bool inforCollapsed;
         public UCCreateCreditCard()
         {
             InitializeComponent();
@@ -27,8 +29,8 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
 
         public void LoadBorrowAccount()
         {
-           
-            SqlDataReader reader = reditcardDAO.GetDataDefaultAccount(txtUserName.Text,txtPassWord.Text);
+
+            SqlDataReader reader = reditcardDAO.GetDataDefaultAccount(txtUserName.Text, txtPassWord.Text);
             if (reader != null)
             {
                 txtAccountNumber.Text = reader["AccountNumber"].ToString();
@@ -51,8 +53,13 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
             CustomerAccount customerAccount = new CustomerAccount(txtUserName.Text, txtPassWord.Text);
             if (reditcardDAO.IsCreditAccountExists(customerAccount))
             {
-                LoadBorrowAccount();
-                MessageBox.Show("Success");
+                string input = Microsoft.VisualBasic.Interaction.InputBox("Enter credit card limit amount:", "Notification", "");
+                if (!string.IsNullOrEmpty(input))
+                {
+                    limitmoney = input;
+                    LoadBorrowAccount();
+                    btnAdd_Click(sender, e);
+                }
             }
             else
             {
@@ -70,15 +77,15 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
             this.gvCreditCard.DataSource = reditcardDAO.DanhSachQuanLy();
         }
 
-        public void getDataCredit(CreditCard credit)
-        {            
+        public void getData(CreditCard credit)
+        {
             DateTime dateTime = Time.GetCurrentTime();
             SqlDataReader reader = reditcardDAO.GetDataCredit(Convert.ToInt32(txtAccountNumber.Text));
-            if(reader != null)
+            if (reader != null)
             {
                 credit.Accountnumber = Convert.ToInt32(reader["AccountNumber"]);
-                credit.Creditlimit = (Convert.ToInt32(reader["Balance"]) / 2).ToString();
             }
+            credit.Creditlimit = limitmoney;
             credit.Moneyspent = "0";
             credit.Datecreated = dateTime;
             credit.Expirationdate = dateTime.AddDays(30);
@@ -87,84 +94,71 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
             {
                 credit.Cvvcode = RanDom.RandomCharacters();
             }
-        }
-
-        private bool isTextBoxVisible = true;
-
-        private void btnMore_Click(object sender, EventArgs e)
-        {
-            if (isTextBoxVisible)
-            {
-                btnMore.Text = "More";
-                txtAccountNumber.Visible = false;
-                txtAcountStatus.Visible = false;
-                txtAddress.Visible = false;
-                txtBalance.Visible = false;
-                txtCustomerID.Visible = false;
-                txtEmail.Visible = false;
-                txtIdentitycard.Visible = false;
-                txtPhoneNumber.Visible = false;
-                txtCustomerName.Visible = false;
-                cboGender.Visible = false;
-                cboAccountType.Visible = false;
-
-                lblAccountNumber.Visible = false;
-                lblAccountStatus.Visible = false;
-                lblAddress.Visible = false;
-                lblBalance.Visible = false;
-                lblCustomerID.Visible = false;
-                lblEmail.Visible = false;
-                lblIdentitycard.Visible = false;
-                lblPhoneNumber.Visible = false;
-                lblCustomerName.Visible = false;
-                lblGender.Visible = false;
-                lblAccountType.Visible = false;
-                isTextBoxVisible = false;
-            }
-            else
-            {
-                btnMore.Text = "Less";
-                txtAccountNumber.Visible = true;
-                txtAcountStatus.Visible = true;
-                txtAddress.Visible = true;
-                txtBalance.Visible = true;
-                txtCustomerID.Visible = true;
-                txtEmail.Visible = true;
-                txtIdentitycard.Visible = true;
-                txtPhoneNumber.Visible = true;
-                txtCustomerName.Visible = true;
-                cboGender.Visible = true;
-                cboAccountType.Visible = true;
-
-                lblAccountNumber.Visible = true;
-                lblAccountStatus.Visible = true;
-                lblAddress.Visible = true;
-                lblBalance.Visible = true;
-                lblCustomerID.Visible = true;
-                lblEmail.Visible = true;
-                lblIdentitycard.Visible = true;
-                lblPhoneNumber.Visible = true;
-                lblCustomerName.Visible = true;
-                lblGender.Visible = true;
-                lblAccountType.Visible = true;
-                isTextBoxVisible = true;
-            }
+            credit.CreditCardStatus = "Active";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             CreditCard credit = new CreditCard();
-            getDataCredit(credit);
+            getData(credit);
+            limitmoney = null;
             if (reditcardDAO.Them(credit))
             {
-                MessageBox.Show("Thanh Cong");
+                MessageBox.Show("Success");
+                Infortimer.Start();
+                inforContainer.Visible = true;
                 ClearText.ClearAll(this.Controls);
             }
             else
             {
-                MessageBox.Show("That Bai");
+                MessageBox.Show("Fail");
             }
             LoadDanhSach();
+        }
+
+        private void txtUserName_Enter(object sender, EventArgs e)
+        {
+            if (txtUserName.Text == "UserName")
+            {
+                txtUserName.Text = "";
+            }
+        }
+
+        private void txtPassWord_Enter(object sender, EventArgs e)
+        {
+            if (txtPassWord.Text == "PassWord")
+            {
+                txtPassWord.Text = "";
+            }
+        }
+
+        private void Infortimer_Tick(object sender, EventArgs e)
+        {
+            if (inforCollapsed)
+            {
+                inforContainer.Left += 10;
+                inforContainer.Width -= 10;
+                if (inforContainer.Width == inforContainer.MinimumSize.Width)
+                {
+                    inforCollapsed = false;
+                    Infortimer.Stop();
+                }
+            }
+            else
+            {
+                inforContainer.Left -= 10;
+                inforContainer.Width += 10;
+                if (inforContainer.Width == inforContainer.MaximumSize.Width)
+                {
+                    inforCollapsed = true;
+                    Infortimer.Stop();
+                }
+            }
+        }
+
+        private void btnArrow_Click(object sender, EventArgs e)
+        {
+            Infortimer.Start();
         }
     }
 }

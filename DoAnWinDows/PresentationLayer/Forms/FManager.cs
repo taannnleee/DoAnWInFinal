@@ -13,6 +13,7 @@ namespace DoAnWinDows
 {
     public partial class FManager : Form
     {
+        bool homeCollapsed;
         public FManager()
         {
             InitializeComponent();
@@ -21,21 +22,48 @@ namespace DoAnWinDows
         public void AddUserControl(UserControl uc)
         {
             uc.Dock = DockStyle.Fill;
-            panelContainer.Controls.Clear();
-            panelContainer.Controls.Add(uc);
+            panelManager.Controls.Clear();
+            panelManager.Controls.Add(uc);
             uc.BringToFront();
         }
 
-        private void customerAccountToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
-            UCCustomerAccount account = new UCCustomerAccount();
-            AddUserControl(account);
+            Hometimer.Start();
         }
 
-        private void employeeManagerToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Hometimer_Tick(object sender, EventArgs e)
         {
-            UCEmployeeManager employee = new UCEmployeeManager();
-            AddUserControl(employee);
+            if (homeCollapsed)
+            {
+                homeContainer.Height += 10;
+                if (homeContainer.Height == homeContainer.MaximumSize.Height)
+                {
+                    homeCollapsed = false;
+                    Hometimer.Stop();
+                }
+            }
+            else
+            {
+                homeContainer.Height -= 10;
+                if (homeContainer.Height == homeContainer.MinimumSize.Height)
+                {
+                    homeCollapsed = true;
+                    Hometimer.Stop();
+                }
+            }
+        }
+
+        private void btnEmployee_Click(object sender, EventArgs e)
+        {
+            UCEmployeeManager employeeManager = new UCEmployeeManager();
+            AddUserControl(employeeManager);
+        }
+
+        private void btnCustomer_Click(object sender, EventArgs e)
+        {
+            UCCustomerAccount cusacc = new UCCustomerAccount();
+            AddUserControl(cusacc);
         }
     }
 }

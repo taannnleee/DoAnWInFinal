@@ -1,8 +1,9 @@
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using DoAnWinDows.BusinessLayer.Models;
 using DoAnWinDows.DataAccessLayer;
 using DoAnWinDows.DataAccessObject;
 using DoAnWinDows.PresentationLayer.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DoAnWinDows
 {
@@ -118,6 +119,18 @@ namespace DoAnWinDows
         private void cboDecentralization_MouseEnter(object sender, EventArgs e)
         {
             cboDecentralization.Select(0, 0);
+        }
+
+        private void FLogin_Load(object sender, EventArgs e)
+        {
+            string status = "Expired";
+            CreditCardDAO credit = new CreditCardDAO();
+            List<CreditCard> lcreditcard = credit.GetExpirationDate();
+
+            foreach (CreditCard curentcredit in lcreditcard)
+            {
+                credit.UpdateExpirationDate(curentcredit.Cvvcode, status);
+            }
         }
     }
 }
