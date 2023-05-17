@@ -83,15 +83,16 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
             if (IsExpiredAccount(credit))
             {
                 int number = int.Parse(credit.Moneyspent);
-                number = number + Convert.ToInt32(number* 0.1);
+                number = number + Convert.ToInt32(number* 0.1* Convert.ToInt32(credit.OverdueMonths));
                 credit.Moneyspent = number.ToString();
                 MessageBox.Show("Overdue payment");
-                MessageBox.Show("Total amount payable : " + number.ToString());
+                MessageBox.Show("interest = : " + credit.Moneyspent);
             }
             if (checkBalance())
             {
                 if (creditRechargeDao.creditRecharge(credit, cusacc))
                 {
+                    reditcardDAO.backupStatus(credit.Cvvcode, "Active", "0");
                     MessageBox.Show("Success");
                     MessageBox.Show("Total payment:" + credit.Moneyspent);
                 }

@@ -95,6 +95,7 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
                 credit.Cvvcode = RanDom.RandomCharacters();
             }
             credit.CreditCardStatus = "Active";
+            credit.OverdueMonths = "0";
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
