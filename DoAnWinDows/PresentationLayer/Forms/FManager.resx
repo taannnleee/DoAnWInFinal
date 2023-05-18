@@ -67,7 +67,7 @@
   <data name="btnEmployee.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAABv5JREFUeF7tWnlMFFccpk16pJo2PdI0jW16pH/1jj3+K7V7sLuzsOzMDjdYFAQE
+        DAAACwwBP0AiyAAABv5JREFUeF7tWnlMFFccpk16pJo2PdI0jW16pH/1jj3+K7V7sLuzsOzMDjdYFAQE
         bNCKIAUKmKIoR7scCohRkQZBxSOtxmKjFuuFoKCIgqhQrFeqtY21Cr++NzyWN/BIFXbYtZ0v+UIY3s7v
         +755++Y3b/BQoUKFChUqxg6dzvqsnhOn6k38NK1ReM/Ly/JSenr6g+TP/z0YDIZHtCbBT8fx67Ucf0nH
         CTCc6PgfWhO/A/2M0+vFp8hH72/gq6rjbCIydoZlejTiMFBYiw2G4MfJqe4/TDP4vopMHGEZvFtqOaFX
@@ -103,7 +103,7 @@
   <data name="btnCustomer.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAADA9JREFUeF7Vmnt0FNUdx2OttLX29PlHq57KOX3A7iZSwAJNZncxBIGEmdk8NiEJ
+        DAAACwwBP0AiyAAADA9JREFUeF7Vmnt0FNUdx2OttLX29PlHq57KOX3A7iZSwAJNZncxBIGEmdk8NiEJ
         gQQCCc8gR15apD5A3iDWovWJUk/V2iKKUgrUcqxVi1ZbodiiUIOE6GmtfRxLq97+vnd+dzKzO8nMJCDL
         75zvSWYz93t/n9/ce+fObPJKSkb2I51HyutNoB23h4/S2ePnOggZaMftvc1DBtpx+4/Oz3XQTUSTpV+O
         Jsy6SNxYENXMG6JxfXZE00uGDSv9tMM42zxEoB23zx0/Ak5E48ZTpA+icVN0ybCk6X+PxY1bYvHUhaHN
@@ -161,7 +161,7 @@
   <data name="btnManager.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAACj9JREFUeF7dmnuMHVUdx3fvc/fudh9st2VLXUvBthatEapFEHxQIFGTqvGZqJFo
+        DAAACwwBP0AiyAAACj9JREFUeF7dmnuMHVUdx3fvc/fudh9st2VLXUvBthatEapFEHxQIFGTqvGZqJFo
         LBUlUaPYGgMYbVQMYlQgIkaNJv3DR3ygBhBRMYaCoDYxoiAWiZpYKpXWSqG7fj/n/mY6Z+48b2+XW77J
         N3vPzHy/8/udOefMOWd2YOPGlzbEujjQDdCZHp+Ax4+fVygJdKZPNi8JdKZfOD+vUALozCzdvATQmb4v
         /TxgYmY9MUdn+r7084CJmfXEHJ3p+9LPAyZm1hNzdKbvSz8PmJhZT8zRmb4v/TxgYmY9MUdn+r7084CJ

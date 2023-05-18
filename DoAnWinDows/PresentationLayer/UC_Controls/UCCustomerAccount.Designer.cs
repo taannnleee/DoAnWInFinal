@@ -49,7 +49,6 @@
             lblAccountType = new Label();
             lblCustomerID = new Label();
             lblAccountNumber = new Label();
-            btnSearch = new Button();
             btnClearAll = new Button();
             txtCustomerName = new TextBox();
             lblPhoneNumber = new Label();
@@ -258,22 +257,10 @@
             lblAccountNumber.TabIndex = 207;
             lblAccountNumber.Text = "AccountNumber";
             // 
-            // btnSearch
-            // 
-            btnSearch.AutoSize = true;
-            btnSearch.Location = new Point(657, 285);
-            btnSearch.Margin = new Padding(3, 2, 3, 2);
-            btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(90, 25);
-            btnSearch.TabIndex = 231;
-            btnSearch.Text = "Search";
-            btnSearch.UseVisualStyleBackColor = true;
-            btnSearch.Click += btnSearch_Click;
-            // 
             // btnClearAll
             // 
             btnClearAll.AutoSize = true;
-            btnClearAll.Location = new Point(777, 285);
+            btnClearAll.Location = new Point(668, 285);
             btnClearAll.Margin = new Padding(3, 2, 3, 2);
             btnClearAll.Name = "btnClearAll";
             btnClearAll.Size = new Size(90, 25);
@@ -375,7 +362,6 @@
             Controls.Add(lblPhoneNumber);
             Controls.Add(txtCustomerName);
             Controls.Add(btnClearAll);
-            Controls.Add(btnSearch);
             Controls.Add(txtBalance);
             Controls.Add(lblBalance);
             Controls.Add(cboGender);
@@ -428,7 +414,6 @@
         private Label lblAccountType;
         private Label lblCustomerID;
         private Label lblAccountNumber;
-        private Button btnSearch;
         private Button btnClearAll;
         private TextBox txtCustomerName;
         private Label lblPhoneNumber;

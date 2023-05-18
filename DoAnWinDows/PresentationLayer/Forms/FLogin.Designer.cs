@@ -100,6 +100,7 @@
             txtPassWord.Location = new Point(111, 345);
             txtPassWord.Margin = new Padding(3, 2, 3, 2);
             txtPassWord.Name = "txtPassWord";
+            txtPassWord.PasswordChar = '*';
             txtPassWord.Size = new Size(299, 28);
             txtPassWord.TabIndex = 54;
             txtPassWord.TabStop = false;

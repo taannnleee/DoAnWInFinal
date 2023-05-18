@@ -52,9 +52,9 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 19.8F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.Location = new Point(297, 16);
+            label3.Location = new Point(448, 0);
             label3.Name = "label3";
-            label3.Size = new Size(192, 45);
+            label3.Size = new Size(157, 37);
             label3.TabIndex = 28;
             label3.Text = "RECHARGE";
             // 
@@ -66,18 +66,21 @@
             groupBox1.Controls.Add(txtAccNum);
             groupBox1.Controls.Add(label4);
             groupBox1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBox1.Location = new Point(25, 64);
+            groupBox1.Location = new Point(22, 48);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(739, 223);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(1011, 229);
             groupBox1.TabIndex = 32;
             groupBox1.TabStop = false;
             groupBox1.Text = "Customer 's Information";
             // 
             // rtxtInformation
             // 
-            rtxtInformation.Location = new Point(310, 15);
+            rtxtInformation.Location = new Point(271, 11);
+            rtxtInformation.Margin = new Padding(3, 2, 3, 2);
             rtxtInformation.Name = "rtxtInformation";
-            rtxtInformation.Size = new Size(423, 205);
+            rtxtInformation.Size = new Size(734, 214);
             rtxtInformation.TabIndex = 33;
             rtxtInformation.Text = "";
             // 
@@ -86,9 +89,10 @@
             btnSearch.AutoSize = true;
             btnSearch.BackColor = SystemColors.GradientInactiveCaption;
             btnSearch.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSearch.Location = new Point(82, 131);
+            btnSearch.Location = new Point(72, 98);
+            btnSearch.Margin = new Padding(3, 2, 3, 2);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(102, 40);
+            btnSearch.Size = new Size(89, 31);
             btnSearch.TabIndex = 4;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
@@ -97,18 +101,19 @@
             // txtAccNum
             // 
             txtAccNum.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtAccNum.Location = new Point(24, 80);
+            txtAccNum.Location = new Point(21, 60);
+            txtAccNum.Margin = new Padding(3, 2, 3, 2);
             txtAccNum.Name = "txtAccNum";
-            txtAccNum.Size = new Size(238, 34);
+            txtAccNum.Size = new Size(209, 29);
             txtAccNum.TabIndex = 3;
             // 
             // label4
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label4.Location = new Point(24, 43);
+            label4.Location = new Point(21, 32);
             label4.Name = "label4";
-            label4.Size = new Size(175, 28);
+            label4.Size = new Size(142, 21);
             label4.TabIndex = 2;
             label4.Text = "Account number:";
             // 
@@ -121,9 +126,11 @@
             groupBox2.Controls.Add(btnRecharge);
             groupBox2.Controls.Add(txtMoneyRecharge);
             groupBox2.Controls.Add(label2);
-            groupBox2.Location = new Point(25, 293);
+            groupBox2.Location = new Point(22, 281);
+            groupBox2.Margin = new Padding(3, 2, 3, 2);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(739, 248);
+            groupBox2.Padding = new Padding(3, 2, 3, 2);
+            groupBox2.Size = new Size(1011, 186);
             groupBox2.TabIndex = 33;
             groupBox2.TabStop = false;
             groupBox2.Text = "Withdraw Information";
@@ -131,9 +138,10 @@
             // btnPrintBill
             // 
             btnPrintBill.BackColor = SystemColors.GradientInactiveCaption;
-            btnPrintBill.Location = new Point(467, 203);
+            btnPrintBill.Location = new Point(605, 153);
+            btnPrintBill.Margin = new Padding(3, 2, 3, 2);
             btnPrintBill.Name = "btnPrintBill";
-            btnPrintBill.Size = new Size(94, 29);
+            btnPrintBill.Size = new Size(82, 22);
             btnPrintBill.TabIndex = 14;
             btnPrintBill.Text = "Print Bill";
             btnPrintBill.UseVisualStyleBackColor = false;
@@ -141,9 +149,10 @@
             // 
             // rtxtInvoice
             // 
-            rtxtInvoice.Location = new Point(310, 13);
+            rtxtInvoice.Location = new Point(271, 10);
+            rtxtInvoice.Margin = new Padding(3, 2, 3, 2);
             rtxtInvoice.Name = "rtxtInvoice";
-            rtxtInvoice.Size = new Size(423, 184);
+            rtxtInvoice.Size = new Size(734, 139);
             rtxtInvoice.TabIndex = 13;
             rtxtInvoice.Text = "";
             // 
@@ -151,9 +160,9 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.Location = new Point(233, 72);
+            label5.Location = new Point(204, 54);
             label5.Name = "label5";
-            label5.Size = new Size(53, 28);
+            label5.Size = new Size(43, 21);
             label5.TabIndex = 12;
             label5.Text = "VND";
             // 
@@ -162,9 +171,10 @@
             btnRecharge.AutoSize = true;
             btnRecharge.BackColor = SystemColors.GradientInactiveCaption;
             btnRecharge.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnRecharge.Location = new Point(67, 119);
+            btnRecharge.Location = new Point(59, 89);
+            btnRecharge.Margin = new Padding(3, 2, 3, 2);
             btnRecharge.Name = "btnRecharge";
-            btnRecharge.Size = new Size(117, 40);
+            btnRecharge.Size = new Size(102, 31);
             btnRecharge.TabIndex = 7;
             btnRecharge.Text = "Recharge";
             btnRecharge.UseVisualStyleBackColor = false;
@@ -173,18 +183,19 @@
             // txtMoneyRecharge
             // 
             txtMoneyRecharge.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMoneyRecharge.Location = new Point(24, 69);
+            txtMoneyRecharge.Location = new Point(21, 52);
+            txtMoneyRecharge.Margin = new Padding(3, 2, 3, 2);
             txtMoneyRecharge.Name = "txtMoneyRecharge";
-            txtMoneyRecharge.Size = new Size(203, 34);
+            txtMoneyRecharge.Size = new Size(178, 29);
             txtMoneyRecharge.TabIndex = 6;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.Location = new Point(24, 32);
+            label2.Location = new Point(21, 24);
             label2.Name = "label2";
-            label2.Size = new Size(197, 28);
+            label2.Size = new Size(158, 21);
             label2.TabIndex = 5;
             label2.Text = "Money to recharge:";
             // 
@@ -204,15 +215,14 @@
             // 
             // UCRecharge
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(label3);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "UCRecharge";
-            Size = new Size(801, 549);
+            Size = new Size(1075, 746);
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);

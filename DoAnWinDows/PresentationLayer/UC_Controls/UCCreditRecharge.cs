@@ -1,5 +1,6 @@
 ﻿using DoAnWinDows.BusinessLayer.Models;
 using DoAnWinDows.DataAccessLayer;
+using DoAnWinDows.Helpers;
 using DoAnWinDows.Utilities;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
         public CustomerAccount getDataCusAcc()
         {
             CreditCard credit = getDataCredit();
-            CustomerAccount cusacc =  reditcardDAO.GetCusData(credit.Accountnumber.ToString());
+            CustomerAccount cusacc = reditcardDAO.GetCusData(credit.Accountnumber.ToString());
             return cusacc;
         }
 
@@ -83,29 +84,39 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
             if (IsExpiredAccount(credit))
             {
                 int number = int.Parse(credit.Moneyspent);
-                number = number + Convert.ToInt32(number* 0.1* Convert.ToInt32(credit.OverdueMonths));
+                number = number + Convert.ToInt32(number * 0.1 * Convert.ToInt32(credit.OverdueMonths));
                 credit.Moneyspent = number.ToString();
                 MessageBox.Show("Overdue payment");
-                MessageBox.Show("interest = : " + credit.Moneyspent);
+                MessageBox.Show("Total payment: = " + credit.Moneyspent);
             }
-            if (checkBalance())
+            DialogResult result = MessageBox.Show("Are you sure?", "Notification", MessageBoxButtons.OKCancel);
+            if (result == DialogResult.OK)
             {
-                if (creditRechargeDao.creditRecharge(credit, cusacc))
+                if (checkBalance())
                 {
-                    reditcardDAO.backupStatus(credit.Cvvcode, "Active", "0");
-                    MessageBox.Show("Success");
-                    MessageBox.Show("Total payment:" + credit.Moneyspent);
+                    if (creditRechargeDao.creditRecharge(credit, cusacc))
+                    {
+                        reditcardDAO.backupStatus(credit.Cvvcode, "Active", "0");
+                        MessageBox.Show("Total payment:" + credit.Moneyspent);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Fail");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Fail");
+                    MessageBox.Show("The amount in the original account is not enough");
                 }
             }
             else
             {
-                MessageBox.Show("The amount in the original account is not enough");
+                // Thực hiện hành động khi người dùng không chọn OK
+                // ...
             }
-            
+
+            LoadCreditById();
+
         }
 
         string[] columnNames1 = { "CVVCode", "MoneySpent" };
@@ -125,6 +136,9 @@ namespace DoAnWinDows.PresentationLayer.UC_Controls
             creditRechargeDao.LoadRowInCreditCardTable(gvCreditCard, columnNames1, PairData());
         }
 
-
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearText.ClearAll(this.Controls);
+        }
     }
 }

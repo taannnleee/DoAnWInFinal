@@ -52,9 +52,9 @@
             // label3
             // 
             label3.BackColor = Color.White;
-            label3.Location = new Point(88, 55);
+            label3.Location = new Point(3, 51);
             label3.Name = "label3";
-            label3.Size = new Size(300, 2);
+            label3.Size = new Size(370, 2);
             label3.TabIndex = 307;
             label3.Text = "label3";
             // 
@@ -65,7 +65,7 @@
             txtCvvCode.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             txtCvvCode.ForeColor = Color.White;
             txtCvvCode.HideSelection = false;
-            txtCvvCode.Location = new Point(88, 20);
+            txtCvvCode.Location = new Point(3, 21);
             txtCvvCode.Margin = new Padding(3, 2, 3, 2);
             txtCvvCode.Name = "txtCvvCode";
             txtCvvCode.Size = new Size(299, 28);
@@ -96,7 +96,7 @@
             // 
             // btnCompleted
             // 
-            btnCompleted.Location = new Point(203, 339);
+            btnCompleted.Location = new Point(187, 283);
             btnCompleted.Name = "btnCompleted";
             btnCompleted.Size = new Size(75, 23);
             btnCompleted.TabIndex = 320;
@@ -108,7 +108,7 @@
             // 
             cbSupplier.FormattingEnabled = true;
             cbSupplier.Items.AddRange(new object[] { "Water Payments", "Electricity Payments", "Housing Payments" });
-            cbSupplier.Location = new Point(94, 113);
+            cbSupplier.Location = new Point(89, 118);
             cbSupplier.Name = "cbSupplier";
             cbSupplier.Size = new Size(278, 23);
             cbSupplier.TabIndex = 319;
@@ -118,7 +118,7 @@
             // 
             cbService.FormattingEnabled = true;
             cbService.Items.AddRange(new object[] { "Water Payments", "Electricity Payments", "Housing Payments" });
-            cbService.Location = new Point(111, 41);
+            cbService.Location = new Point(89, 43);
             cbService.Name = "cbService";
             cbService.Size = new Size(278, 23);
             cbService.TabIndex = 318;
@@ -128,7 +128,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(24, 247);
+            label8.Location = new Point(31, 206);
             label8.Name = "label8";
             label8.Size = new Size(50, 15);
             label8.TabIndex = 317;
@@ -146,7 +146,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(38, 41);
+            label6.Location = new Point(23, 46);
             label6.Name = "label6";
             label6.Size = new Size(44, 15);
             label6.TabIndex = 315;
@@ -155,7 +155,7 @@
             // label4
             // 
             label4.BackColor = Color.White;
-            label4.Location = new Point(57, 311);
+            label4.Location = new Point(89, 239);
             label4.Name = "label4";
             label4.Size = new Size(300, 2);
             label4.TabIndex = 314;
@@ -168,7 +168,7 @@
             txtExpense.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             txtExpense.ForeColor = Color.White;
             txtExpense.HideSelection = false;
-            txtExpense.Location = new Point(58, 281);
+            txtExpense.Location = new Point(90, 194);
             txtExpense.Margin = new Padding(3, 2, 3, 2);
             txtExpense.Name = "txtExpense";
             txtExpense.Size = new Size(299, 28);
@@ -178,7 +178,7 @@
             // label2
             // 
             label2.BackColor = Color.White;
-            label2.Location = new Point(72, 147);
+            label2.Location = new Point(90, 147);
             label2.Name = "label2";
             label2.Size = new Size(300, 2);
             label2.TabIndex = 312;
@@ -196,9 +196,9 @@
             // label5
             // 
             label5.BackColor = Color.White;
-            label5.Location = new Point(70, 104);
+            label5.Location = new Point(3, 106);
             label5.Name = "label5";
-            label5.Size = new Size(300, 2);
+            label5.Size = new Size(370, 2);
             label5.TabIndex = 310;
             label5.Text = "label5";
             // 
@@ -209,7 +209,7 @@
             textBox4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             textBox4.ForeColor = Color.White;
             textBox4.HideSelection = false;
-            textBox4.Location = new Point(3, 69);
+            textBox4.Location = new Point(3, 72);
             textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(182, 28);
@@ -224,7 +224,7 @@
             txtAvailableBalances.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             txtAvailableBalances.ForeColor = Color.White;
             txtAvailableBalances.HideSelection = false;
-            txtAvailableBalances.Location = new Point(191, 69);
+            txtAvailableBalances.Location = new Point(191, 72);
             txtAvailableBalances.Margin = new Padding(3, 2, 3, 2);
             txtAvailableBalances.Name = "txtAvailableBalances";
             txtAvailableBalances.ReadOnly = true;
@@ -235,10 +235,10 @@
             // gvCreditDetails
             // 
             gvCreditDetails.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gvCreditDetails.Location = new Point(664, 254);
+            gvCreditDetails.Location = new Point(603, 127);
             gvCreditDetails.Name = "gvCreditDetails";
             gvCreditDetails.RowTemplate.Height = 25;
-            gvCreditDetails.Size = new Size(240, 150);
+            gvCreditDetails.Size = new Size(446, 398);
             gvCreditDetails.TabIndex = 312;
             // 
             // UCPayByCredit
