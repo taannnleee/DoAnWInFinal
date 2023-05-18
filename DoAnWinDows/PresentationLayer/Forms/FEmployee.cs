@@ -1,4 +1,6 @@
-﻿using DoAnWinDows.PresentationLayer.UC_Controls;
+﻿using DoAnWinDows.BusinessLayer.Models;
+using DoAnWinDows.DataAccessLayer;
+using DoAnWinDows.PresentationLayer.UC_Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -122,6 +124,40 @@ namespace DoAnWinDows.PresentationLayer.Forms
         {
             UCChangePassword changepass = new UCChangePassword();
             AddUserControl(changepass);
+        }
+
+        private void FEmployee_Load(object sender, EventArgs e)
+        {
+            string onemonth = "1";
+            string twomonth = "2";
+            string moremonth = "3";
+            DateTime current = Time.GetCurrentTime();
+            string status = "Expired";
+            CreditCardDAO credit = new CreditCardDAO();
+            List<CreditCard> lcreditcard = credit.GetExpirationDate();
+
+            foreach (CreditCard curentcredit in lcreditcard)
+            {
+                TimeSpan duration = current - curentcredit.Expirationdate;
+                int numberOfDays = (int)duration.TotalDays;
+                DateTime newdayexpira = curentcredit.Expirationdate.AddDays(1);
+                if (current > newdayexpira)
+                {
+                    credit.UpdateExpirationDate(curentcredit.Cvvcode, status);
+                }
+                if (numberOfDays >= 1 && numberOfDays <= 30)
+                {
+                    credit.UpdateOverdueMonths(curentcredit.Cvvcode, onemonth);
+                }
+                else if (numberOfDays >= 31 && numberOfDays <= 60)
+                {
+                    credit.UpdateOverdueMonths(curentcredit.Cvvcode, twomonth);
+                }
+                else if (numberOfDays >= 61)
+                {
+                    credit.UpdateOverdueMonths(curentcredit.Cvvcode, moremonth);
+                }
+            }
         }
     }
 }

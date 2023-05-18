@@ -126,7 +126,7 @@ namespace DoAnWinDows.DataAccessLayer
 
         public void backupStatus(string cvvcode, string status,string debtmonth)
         {
-            string sqlStr = string.Format("UPDATE CreditCard SET CreditCardStatus = '{0}',OverdueMonths = '{1}' where CVVCode='{2}'",status,debtmonth,cvvcode );
+            string sqlStr = string.Format("UPDATE CreditCard SET CreditCardStatus = '{0}',OverdueMonths = '{1}',ExpirationDate = '{2}' where CVVCode='{3}'", status,debtmonth,Time.GetCurrentTime(),cvvcode );
             dbconnect.ThucThi(sqlStr);
         }
     }

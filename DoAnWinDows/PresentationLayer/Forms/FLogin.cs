@@ -33,7 +33,7 @@ namespace DoAnWinDows
                 }
                 else
                 {
-                    MessageBox.Show("Mat khau hoac tai khoan sai");
+                    MessageBox.Show("Wrong password or account");
                 }
             }
             else
@@ -45,7 +45,7 @@ namespace DoAnWinDows
                 }
                 else
                 {
-                    MessageBox.Show("Mat khau hoac tai khoan sai");
+                    MessageBox.Show("Wrong password or account");
                 }
             }
         }
@@ -124,35 +124,7 @@ namespace DoAnWinDows
 
         private void FLogin_Load(object sender, EventArgs e)
         {
-            string onemonth = "1";
-            string twomonth ="2";
-            string moremonth = "3";
-            DateTime current = Time.GetCurrentTime();
-            string status = "Expired";
-            CreditCardDAO credit = new CreditCardDAO();
-            List<CreditCard> lcreditcard = credit.GetExpirationDate();
 
-            foreach (CreditCard curentcredit in lcreditcard)
-            {
-                TimeSpan duration = current - curentcredit.Expirationdate;
-                int numberOfDays = (int)duration.TotalDays;
-                if (current> curentcredit.Expirationdate)
-                {
-                    credit.UpdateExpirationDate(curentcredit.Cvvcode, status);
-                }
-                if(numberOfDays>=1&&numberOfDays<=30)
-                {
-                    credit.UpdateOverdueMonths(curentcredit.Cvvcode, onemonth);
-                }
-                else if(numberOfDays>=31&& numberOfDays <= 60)
-                {
-                    credit.UpdateOverdueMonths(curentcredit.Cvvcode, twomonth);
-                }
-                else
-                {
-                    credit.UpdateOverdueMonths(curentcredit.Cvvcode, moremonth);
-                }
-            }
         }
     }
 }

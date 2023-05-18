@@ -164,6 +164,7 @@
             btnClearAll.TabIndex = 264;
             btnClearAll.Text = "ClearAll";
             btnClearAll.UseVisualStyleBackColor = true;
+            btnClearAll.Click += btnClearAll_Click_1;
             // 
             // cboGender
             // 

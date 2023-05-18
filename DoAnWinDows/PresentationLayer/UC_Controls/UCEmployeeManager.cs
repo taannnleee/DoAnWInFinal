@@ -73,11 +73,11 @@ namespace DoAnWinDows
             {
                 if (employeeDao.Them(empAcc, employee))
                 {
-                    MessageBox.Show("Thanh Cong");
+                    MessageBox.Show("Success");
                 }
                 else
                 {
-                    MessageBox.Show("That Bai");
+                    MessageBox.Show("Fail");
                 }
             }
             else
@@ -94,11 +94,11 @@ namespace DoAnWinDows
             Employee employee = new Employee(txtEmployeeID.Text, txtEmployeeName.Text, txtPhoneNumber.Text, txtIdentitycard.Text, txtEmail.Text, txtAddress.Text, dtmDateOfBirth.Value, cboGender.SelectedItem.ToString(), cboPosition.SelectedItem.ToString(), txtSalary.Text);
             if (employeeDao.Xoa(empAcc, employee))
             {
-                MessageBox.Show("Thanh Cong");
+                MessageBox.Show("Success");
             }
             else
             {
-                MessageBox.Show("That Bai");
+                MessageBox.Show("Fail");
             }
             LoadDanhSach();
         }
@@ -109,11 +109,11 @@ namespace DoAnWinDows
             Employee employee = new Employee(txtEmployeeID.Text, txtEmployeeName.Text, txtPhoneNumber.Text, txtIdentitycard.Text, txtEmail.Text, txtAddress.Text, dtmDateOfBirth.Value, cboGender.SelectedItem.ToString(), cboPosition.SelectedItem.ToString(), txtSalary.Text);
             if (employeeDao.Sua(empAcc, employee))
             {
-                MessageBox.Show("Thanh Cong");
+                MessageBox.Show("Success");
             }
             else
             {
-                MessageBox.Show("That Bai");
+                MessageBox.Show("Fail");
             }
             LoadDanhSach();
         }
@@ -121,6 +121,11 @@ namespace DoAnWinDows
         private void gvEmployee_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             employeeDao.LoadRowInEmployeeTable(gvEmployee, columnNames1, PairData());
+        }
+
+        private void btnClearAll_Click_1(object sender, EventArgs e)
+        {
+            ClearText.ClearAll(this.Controls);
         }
     }
 }

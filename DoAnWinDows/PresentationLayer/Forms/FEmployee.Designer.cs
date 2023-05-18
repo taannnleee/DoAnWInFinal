@@ -37,9 +37,12 @@
             button4 = new Button();
             lblMenu = new Label();
             homeContainer = new Panel();
+            panel12 = new Panel();
+            btnSettingPassWord = new Button();
             panel8 = new Panel();
             btnRecharge = new Button();
             panel10 = new Panel();
+            panel11 = new Panel();
             btnTypeLoan = new Button();
             panel9 = new Panel();
             btnCreditCard = new Button();
@@ -52,7 +55,6 @@
             panel5 = new Panel();
             panel7 = new Panel();
             btnTransactions = new Button();
-            btnSettingPassWord = new Button();
             sidebarTimer = new System.Windows.Forms.Timer(components);
             Hometimer = new System.Windows.Forms.Timer(components);
             panelEmployee = new Panel();
@@ -61,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)menuButton).BeginInit();
             panel6.SuspendLayout();
             homeContainer.SuspendLayout();
+            panel12.SuspendLayout();
             panel8.SuspendLayout();
             panel10.SuspendLayout();
             panel9.SuspendLayout();
@@ -74,7 +77,6 @@
             sidebar.BackColor = Color.FromArgb(64, 64, 64);
             sidebar.Controls.Add(panel2);
             sidebar.Controls.Add(homeContainer);
-            sidebar.Controls.Add(btnSettingPassWord);
             sidebar.Dock = DockStyle.Left;
             sidebar.Location = new Point(0, 0);
             sidebar.MaximumSize = new Size(205, 661);
@@ -141,6 +143,7 @@
             // 
             // homeContainer
             // 
+            homeContainer.Controls.Add(panel12);
             homeContainer.Controls.Add(panel8);
             homeContainer.Controls.Add(panel10);
             homeContainer.Controls.Add(panel9);
@@ -149,11 +152,41 @@
             homeContainer.Controls.Add(btnBankSavings);
             homeContainer.Controls.Add(panel5);
             homeContainer.Location = new Point(3, 70);
-            homeContainer.MaximumSize = new Size(200, 381);
+            homeContainer.MaximumSize = new Size(200, 431);
             homeContainer.MinimumSize = new Size(200, 69);
             homeContainer.Name = "homeContainer";
             homeContainer.Size = new Size(200, 69);
             homeContainer.TabIndex = 6;
+            // 
+            // panel12
+            // 
+            panel12.Controls.Add(btnSettingPassWord);
+            panel12.Location = new Point(-1, 379);
+            panel12.Name = "panel12";
+            panel12.Size = new Size(200, 55);
+            panel12.TabIndex = 5;
+            // 
+            // btnSettingPassWord
+            // 
+            btnSettingPassWord.Anchor = AnchorStyles.Left | AnchorStyles.Right;
+            btnSettingPassWord.BackColor = Color.FromArgb(64, 64, 64);
+            btnSettingPassWord.BackgroundImageLayout = ImageLayout.None;
+            btnSettingPassWord.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
+            btnSettingPassWord.FlatAppearance.BorderSize = 5000;
+            btnSettingPassWord.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
+            btnSettingPassWord.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
+            btnSettingPassWord.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSettingPassWord.ForeColor = Color.White;
+            btnSettingPassWord.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSettingPassWord.Location = new Point(3, 4);
+            btnSettingPassWord.Name = "btnSettingPassWord";
+            btnSettingPassWord.Padding = new Padding(30, 0, 0, 0);
+            btnSettingPassWord.Size = new Size(199, 48);
+            btnSettingPassWord.TabIndex = 4;
+            btnSettingPassWord.Text = "  Setting PassWord";
+            btnSettingPassWord.TextAlign = ContentAlignment.MiddleRight;
+            btnSettingPassWord.UseVisualStyleBackColor = false;
+            btnSettingPassWord.Click += btnSettingPassWord_Click;
             // 
             // panel8
             // 
@@ -186,11 +219,19 @@
             // 
             // panel10
             // 
+            panel10.Controls.Add(panel11);
             panel10.Controls.Add(btnTypeLoan);
             panel10.Location = new Point(16, 338);
             panel10.Name = "panel10";
             panel10.Size = new Size(183, 44);
             panel10.TabIndex = 11;
+            // 
+            // panel11
+            // 
+            panel11.Location = new Point(1, 49);
+            panel11.Name = "panel11";
+            panel11.Size = new Size(180, 65);
+            panel11.TabIndex = 12;
             // 
             // btnTypeLoan
             // 
@@ -366,28 +407,6 @@
             btnTransactions.UseVisualStyleBackColor = false;
             btnTransactions.Click += btnTransactions_Click;
             // 
-            // btnSettingPassWord
-            // 
-            btnSettingPassWord.Anchor = AnchorStyles.Left | AnchorStyles.Right;
-            btnSettingPassWord.BackColor = Color.FromArgb(64, 64, 64);
-            btnSettingPassWord.BackgroundImageLayout = ImageLayout.None;
-            btnSettingPassWord.FlatAppearance.BorderColor = Color.FromArgb(64, 64, 64);
-            btnSettingPassWord.FlatAppearance.BorderSize = 5000;
-            btnSettingPassWord.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 128, 128);
-            btnSettingPassWord.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 0);
-            btnSettingPassWord.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSettingPassWord.ForeColor = Color.White;
-            btnSettingPassWord.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSettingPassWord.Location = new Point(3, 145);
-            btnSettingPassWord.Name = "btnSettingPassWord";
-            btnSettingPassWord.Padding = new Padding(30, 0, 0, 0);
-            btnSettingPassWord.Size = new Size(199, 48);
-            btnSettingPassWord.TabIndex = 4;
-            btnSettingPassWord.Text = "  Setting PassWord";
-            btnSettingPassWord.TextAlign = ContentAlignment.MiddleRight;
-            btnSettingPassWord.UseVisualStyleBackColor = false;
-            btnSettingPassWord.Click += btnSettingPassWord_Click;
-            // 
             // sidebarTimer
             // 
             sidebarTimer.Interval = 8;
@@ -416,12 +435,14 @@
             Name = "FEmployee";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FEmployee";
+            Load += FEmployee_Load;
             sidebar.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)menuButton).EndInit();
             panel6.ResumeLayout(false);
             homeContainer.ResumeLayout(false);
+            panel12.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel9.ResumeLayout(false);
@@ -459,5 +480,7 @@
         private Panel panel8;
         private Panel panel10;
         private Panel panel9;
+        private Panel panel12;
+        private Panel panel11;
     }
 }

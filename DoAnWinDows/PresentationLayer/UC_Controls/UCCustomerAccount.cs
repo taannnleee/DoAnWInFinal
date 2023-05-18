@@ -30,11 +30,11 @@ namespace DoAnWinDows
             {
                 if (cusAccountDao.Inserst(user, info))
                 {
-                    MessageBox.Show("Thanh Cong");
+                    MessageBox.Show("Success");
                 }
                 else
                 {
-                    MessageBox.Show("That Bai");
+                    MessageBox.Show("Fail");
                 }
             }
             else
@@ -50,11 +50,11 @@ namespace DoAnWinDows
             Customer info = new Customer(txtCustomerID.Text, txtCustomerName.Text, txtIdentitycard.Text, txtAddress.Text, txtPhoneNumber.Text, cboGender.SelectedItem.ToString(), txtEmail.Text);
             if (cusAccountDao.Edit(user, info))
             {
-                MessageBox.Show("Thanh Cong");
+                MessageBox.Show("Success");
             }
             else
             {
-                MessageBox.Show("That Bai");
+                MessageBox.Show("Fail");
             }
             LoadList();
         }
@@ -65,11 +65,11 @@ namespace DoAnWinDows
             Customer info = new Customer(txtCustomerID.Text, txtCustomerName.Text, txtIdentitycard.Text, txtAddress.Text, txtPhoneNumber.Text, cboGender.SelectedItem.ToString(), txtEmail.Text);
             if (cusAccountDao.Delete(user, info))
             {
-                MessageBox.Show("Thanh Cong");
+                MessageBox.Show("Success");
             }
             else
             {
-                MessageBox.Show("That Bai");
+                MessageBox.Show("Fail");
             }
             LoadList();
         }
